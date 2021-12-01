@@ -1,0 +1,26 @@
+{
+  "name": "coderscamp-projekt-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielakarwowska/coderscamp-projekt-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielakarwowska/coderscamp-projekt-1/issues"
+  },
+  "homepage": "https://github.com/danielakarwowska/coderscamp-projekt-1#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
