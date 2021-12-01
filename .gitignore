@@ -1,0 +1,8 @@
+.parcel-cache/
+dist/
+node_modules/
+
+.idea
+.cache
+coverage
+.env.local
