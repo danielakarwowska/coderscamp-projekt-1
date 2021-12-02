@@ -17,3 +17,4 @@ new Hej(test);
 
 console.log('sheeet');
 console.log('another      shit');
+console.log('test');
