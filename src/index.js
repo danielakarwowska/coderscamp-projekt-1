@@ -1,20 +1,15 @@
-console.log('test1');
-console.log('test');
+console.log('test1')
+console.log('te             st')
 
 function test(test) {
-  return test;
+  return              test
 }
 
-test(12);
+        test              (12)
 
-class Hej {
-  constructor(test) {
-    this.hej = test;
+class Hej { 
+        constructor(test) {
+          this.hej =              test
   }
 }
 
-new Hej(test);
-
-console.log('sheeet');
-console.log('another      shit');
-console.log('test');
