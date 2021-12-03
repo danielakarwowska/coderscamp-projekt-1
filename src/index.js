@@ -14,3 +14,4 @@ class Hej {
 }
 
 console.log('elo');
+console.log('elo');

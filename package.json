@@ -22,10 +22,10 @@
   "homepage": "https://github.com/danielakarwowska/coderscamp-projekt-1#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
-    "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "parcel": "^2.0.1",
-    "prettier": "2.5.0"
+    "prettier": "2.5.0",
+    "husky": "^7.0.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
