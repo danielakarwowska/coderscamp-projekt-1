@@ -27,7 +27,8 @@ class weatherApi {
             })
             .then(response => {
                 
-                new weatherBox(this.gatherWeatherData(response), document.getElementById("weatherContainer")); 
+                let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById("weatherContainer")); 
+                Box.addElement()
             })
 
             .catch(err => {
@@ -66,12 +67,12 @@ class weatherBox {
         this.setWeatherContainerPosition()
     }
 
-    static addElement() {
+    addElement() {
         let newDiv = document.createElement('div');
         newDiv.classList.add(`StalaWartosc`);
-        newDiv.innerHTML = `${this.data}`;
-        container.appendChild(newDiv);
-        console.log("Dupa");
+        newDiv.innerHTML = `${this.data.cityHeader}`;
+        this.container.appendChild(newDiv);
+        console.log(this.data);
     }
     // Wywołanie 
     setWeatherData() {
@@ -80,10 +81,9 @@ class weatherBox {
                 key != 'weatherIcon' ? document.getElementById(key).innerHTML = value : document.getElementById(key).src = value
             } catch(err) {
 
-                key != 'state' ? console.log('Wrong ID') : this.addElement
+                key != 'state' ? console.log('Wrong ID') : false
             }
          }
-         this.addElement;
     }
 
     setWeatherContainerPosition() {
