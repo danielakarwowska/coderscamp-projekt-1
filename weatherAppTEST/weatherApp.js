@@ -49,6 +49,8 @@ class weatherApi {
             temperature: Math.floor(main.temp) + "&#176",
             // nazwa miasta
             cityHeader: name,
+
+            state: weather[0].main
         }
         return result
     }
@@ -64,11 +66,12 @@ class weatherBox {
         this.setWeatherContainerPosition()
     }
 
-    addElement() {
+    static addElement() {
         let newDiv = document.createElement('div');
-        newDiv.classList.add(`${this.name}`);
+        newDiv.classList.add(`StalaWartosc`);
         newDiv.innerHTML = `${this.data}`;
-        document.appendChild(newDiv);
+        container.appendChild(newDiv);
+        console.log("Dupa");
     }
     // Wywołanie 
     setWeatherData() {
@@ -77,9 +80,16 @@ class weatherBox {
                 key != 'weatherIcon' ? document.getElementById(key).innerHTML = value : document.getElementById(key).src = value
             } catch(err) {
 
-                key != 'state' ? console.log('Wrong ID') : this.addElement()
+                key != 'state' ? console.log('Wrong ID') : this.addElement
             }
          }
+         this.addElement;
+    }
+
+    setWeatherContainerPosition() {
+    //   this.container.style.left = `calc(50% - ${this.container.clientWidth / 2}px)`;
+    //  this.container.style.top = `calc(50% - ${this.container.clientHeight / 2}px)`;
+    //    this.container.style.visibility = "visible";
     }
 
 
