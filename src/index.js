@@ -15,3 +15,4 @@ class Hej {
 
 console.log('elo');
 console.log('elo');
+console.log('heheheheh1');
