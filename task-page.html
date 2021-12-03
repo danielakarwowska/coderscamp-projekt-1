@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -8,19 +9,24 @@
 
     <title>TuDuDu</title>
     <link rel="stylesheet" href="styles/main.scss" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="todo-app">
-      <div id="logo">Welcome at TuDuDu</div>
-      <div id="navigation">
-      </div>
-      <div id="title"></div>
-      <div id="container">
-        <button>Sign in</button>
-        <button>Sign up</button>
-        <button>Guest</button>
-      </div>
+        <div id="logo">TuDuDu</div>
+        <!--Przycisk dodawania tasków-->
+        <div id="navigation">
+            <button id="newTaskButton" class="plusButton">+</button>
+        </div>
+        <div id="title"></div>
+
+        <!--Obszar gdzie będzie lista tasków-->
+        <div id="tasks">
+          <input type="checkbox" id="taskCheckbox" name="taskCheckbox">
+        </div>
+    
     </div>
     <script src="src/index.js" defer></script>
-  </body>
+</body>
+
 </html>
