@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Viga&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #E5E5E5;
+  --text: #3C3744;
+  --accent: #3A6254;
+}
+
+body {
+  background-color: var(--background);
+  transition: color ease-out 250ms;
+  overflow-x: hidden;
+}
+
+button {
+    display: block;
+    border: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+button:focus, button:active {
+    outline: none;
+    }
+
+button:active {
+    transform: scale(1);
+}
+
+.wrapper {
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+  height: 10%;
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-end;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 0.2rem;
+  text-align: center;
+  margin-top: -5rem;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-family: 'Viga', sans-serif;
+}
+
+h2, * + p {
+  margin-bottom: 0.5rem;
+}
+
+section > p:last-of-type {
+  color: transparent;
+  text-shadow: 0 0 0 var(--text);
+  transition: text-shadow ease-out 250ms;
+}
+
+.toggle {
+  background-color: var(--text);
+  min-width: 60px;
+  min-height: 30px;
+  margin-bottom: 1rem;
+  position: relative;
+  border: 2px solid;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color ease-out 250ms;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  background-color: var(--background);
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 30px;
+  transition: transform ease-out 250ms;
+}
+
+.toggle.clicked::after {
+  transform: translateX(100%);
+}
+
+.sun, .sun::after {
+  background-color: var(--accent);
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.sun {
+  transform: rotate(-25deg);
+  transition: background-color ease-out 250ms;
+}
+ 
+  .sun::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  background-color: var(--background);
+  transition: transform ease-out 250ms;
+  transition-delay: 20ms;
+}
+
+.sun.clicked::after {
+  transform: translateY(-30%);
+}
+
+@media screen and (max-height: 560px) {
+  .sun, .sun::after {
+    margin-bottom: calc(-6rem - 12vh);
+    z-index: -1;
+  }
+}
