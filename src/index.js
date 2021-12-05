@@ -14,32 +14,32 @@ const taskLocation = document.querySelectorAll('#location');
 // This is the array that will hold the todo list items
 let toDoItems = [];
 
+
+
+todoForm.addEventListener('submit', function(event){
+    const formData =Object.fromEntries( new FormData(this).entries());
+    let ToDo = new ToDo(...Object.values(formData))
+    toDo.addTodo(lista)
+    event.preventDefault();
+});
+
+class ToDo {
+    constructor(title, notes, locationa, date = Date.now(), checked =false){
+        this.title =title,
+        this.notes =notes,
+        this.location =location,
+        this.date = date,
+        this.checked = checked
+    }
+    addTodo(list){
+        list.push(this.ToDo)
+    }
+}
+
 function renderTodo(todo){
-    const todoItemsList = document.querySelectorAll('#to-do-items');
     const item = document.querySelector(`[data-key='${todo.id}']`);
 if (todo.deleted){
     item.remove();
     return
 }
 }
-
-todoForm.addEventListener('submit', function(event){
-    event.preventDefault();
-    addTodo(todoInput.value);
-});
-
-function addTodo(item){
-    //if item is not empty
-    if (item !== ''){
-        //make a todo oject
-        const todo = {
-            title, 
-            notes,
-            location,
-            date,
-            checked: false,
-            id: Date.now(),
-        };
-        todoItemsList.push(todo);
-    };
-};
