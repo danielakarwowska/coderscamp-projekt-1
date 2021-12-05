@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="styles/main.scss" />
   </head>
   <body>
+    
+      <form id = "to-do-form">
+       <input type="text" id="newTask" placeholder="Add new task ">
+        <input type="text" id="notes" placeholder="Notes">
+        <input type="date" id="date" placeholder="Date">
+        <input type="text" id="location" placeholder="Location">
+
+        <button type="submit" id="add-button">Add task</button>
+      </form>
+
+    <ul id = "to-do-items">
+      <li id ='item'> 
+        <button class ="delete-button">X</button>
+      </li>
+    </ul>
+
     <script src="src/index.js" defer></script>
   </body>
 </html>
