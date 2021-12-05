@@ -34,12 +34,13 @@ class ToDo {
     addTodo(list){
         list.push(this.ToDo)
     }
-}
 
-function renderTodo(todo){
-    const item = document.querySelector(`[data-key='${todo.id}']`);
+
+renderTodo(todo){
+    const item = document.querySelector([data-key='${todo.id}']);
 if (todo.deleted){
     item.remove();
     return
+}
 }
 }
