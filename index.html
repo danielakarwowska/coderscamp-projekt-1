@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="styles/main.scss" />
   </head>
   <body>
-    <script src="src/index.js" defer></script>
+    <div id="todo-app">
+      <div id="logo"></div>
+      <div id="navigation"></div>
+      <div id="title"></div>
+      <div id="container"></div>
+    </div>
+
+    <!-- to be deleted -->
+
+    <div id="searchContainer">
+      <input type="text" placeholder="City Name or Zipcode" id="searchInput" class="searchControl" />
+      <button class="searchControl" id="searchBtn">Search</button>
+    </div>
+    <div id="weatherContainer">
+      <div id="weatherDescription">
+        <h1 id="cityHeader"></h1>
+        <div id="weatherMain">
+          <div id="temperature"></div>
+          <div id="weatherDescriptionHeader"></div>
+          <div><img id="weatherIcon" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end of deletion -->
+    <script src="src/index.js" type="module" defer></script>
   </body>
 </html>
