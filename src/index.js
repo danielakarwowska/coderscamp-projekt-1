@@ -1,3 +1,5 @@
+import { ToDo } from "./componentes/Tasks";
+
 console.log('test1');
 
 const todoForm = document.querySelector('#to-do-form');
@@ -15,24 +17,12 @@ todoForm.addEventListener('submit', function(event){
     event.preventDefault();
 });
 
-class ToDo {
-    constructor(title, notes, location, date = Date.now(), checked =false){
-        this.title =title,
-        this.notes =notes,
-        this.location =location,
-        this.date = date,
-        this.checked = checked
-    }
-    addTodo(list){
-        list.push(this)
-    }
 
 
-renderTodo(todo){
-    const item = document.querySelector('[data-key=${todo.id}]');
-if (todo.deleted){
-    item.remove();
-    return
-}
-}
-}
+// remove task
+let current_tasks = document.querySelectorAll(".delete");
+  for(let i=0; i<toDoItems.length; i++){
+       toDoItems[i].onclick = function(){
+        this.parentNode.remove();
+  };
+};
