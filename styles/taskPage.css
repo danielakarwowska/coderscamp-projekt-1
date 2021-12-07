@@ -35,5 +35,26 @@ body {
 
 .tasks {
     display: flex;
+}
+
+.plusButton {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vh;
+    height: 5vh;
     
+    background: #3A6254;
+    mix-blend-mode: hard-light;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+
+}
+
+#plus {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 5vh;
+    color: rgba(83, 83, 83, 1);
 }
