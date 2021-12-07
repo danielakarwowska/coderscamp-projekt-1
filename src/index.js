@@ -1,4 +1,4 @@
-import { ToDo } from "./componentes/Tasks";
+import { ToDo } from "./components/Tasks";
 
 console.log('test1');
 
