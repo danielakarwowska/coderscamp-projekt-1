@@ -21,7 +21,7 @@ body {
     font-family: Reenie Beanie;
     font-style: normal;
     font-weight: 500;
-    font-size: 20vmax;
+    font-size: 15vmax;
     line-height: 15vmin;
     text-align: center;
 
@@ -58,8 +58,8 @@ input {
 }
 
 .button {
-    width: 255.63px;
-    height: 106.12px;
+    width: 10vw;
+    height: 5vw;
     left: 832px;
     top: 598px;
     margin-top: 1vh;
