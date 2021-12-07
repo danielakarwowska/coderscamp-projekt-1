@@ -1,4 +1,6 @@
-class TaskList {
+import { render } from '../utility/render.js';
+
+export class TaskList {
   #elements;
   #title;
   constructor(title = null, elements = []) {
@@ -7,6 +9,7 @@ class TaskList {
     }
     this.#title = title;
     this.#elements = elements;
+    render(this.renderList(), '.box');
   }
   set setTitle(title) {
     if (!title) {
@@ -20,7 +23,6 @@ class TaskList {
     }
     return this.#title;
   }
-
   set pushTask(task) {
     if (task instanceof ToDo) {
       this.#elements.push(task);
@@ -32,4 +34,19 @@ class TaskList {
     }
     return this.#elements;
   }
+  renderList() {
+    const template = `<div class="list">
+    <h3 class="listTitle"></h3>
+     <form>
+       <input type="checkbox">
+       <input type="text" placeholder="Title">
+       <input type="text" placeholder="Notes">
+       <input type="text" placeholder="Localization">
+       <input type="date">
+     </form>
+  </div>`;
+    return template;
+  }
 }
+
+window.TaskList = TaskList;
