@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <title>TuDuDu</title>
+    <link rel="stylesheet" href="styles/main.scss" />
+  </head>
+
+  <body>
+    <div id="todo-app">
+      <div id="logo">TuDuDu</div>
+      <!--Przycisk dodawania tasków-->
+      <div id="navigation">
+        <button id="saveButton" class="plusButton">+</button>
+      </div>
+      <div id="title"></div>
+
+      <div id="taskFields">
+        <input type="text" id="title" name="title" placeholder="Title" />
+        <input type="text" id="description" name="description" placeholder="Additional information" />
+        <input type="text" id="city" name="city" placeholder="City" />
+        <input type="date" id="date" name="date" />
+      </div>
+    </div>
+    <script src="src/index.js" defer></script>
+  </body>
+</html>

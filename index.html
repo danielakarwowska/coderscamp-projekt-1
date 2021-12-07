@@ -6,35 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <title>To Do App</title>
-    <link rel="stylesheet" href="styles/main.scss" />
+    <title>TuDuDu</title>
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <div id="todo-app">
-      <div id="logo"></div>
+      <div id="logo">Welcome at TuDuDu</div>
       <div id="navigation"></div>
       <div id="title"></div>
-      <div id="container"></div>
-    </div>
-
-    <!-- to be deleted -->
-
-    <div id="searchContainer">
-      <input type="text" placeholder="City Name or Zipcode" id="searchInput" class="searchControl" />
-      <button class="searchControl" id="searchBtn">Search</button>
-    </div>
-    <div id="weatherContainer">
-      <div id="weatherDescription">
-        <h1 id="cityHeader"></h1>
-        <div id="weatherMain">
-          <div id="temperature"></div>
-          <div id="weatherDescriptionHeader"></div>
-          <div><img id="weatherIcon" /></div>
-        </div>
+      <div id="container">
+        <button class="button"><div class="buttonText">Sign in</div></button>
+        <button class="button"><div class="buttonText">Sign up</div></button>
+        <button class="button"><div class="buttonText">Guest</div></button>
       </div>
     </div>
-
-    <!-- end of deletion -->
     <script src="src/index.js" type="module" defer></script>
   </body>
 </html>
