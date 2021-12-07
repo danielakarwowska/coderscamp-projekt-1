@@ -2,7 +2,7 @@
 const toggle = document.getElementById("toggle"),
 sun = document.querySelector(".sun"),
 body = document.querySelector("body");
-let theme = "jasno";
+let theme = "bright";
 
 function setStyles(element, params) {
 for(let i in params) {
@@ -11,10 +11,10 @@ element.style.setProperty(i, params[i]);
 }
 
 function themeChange() {
-theme = theme === "jasno" ? "ciemno" : "jasno";
-document.querySelector("section > h2").textContent = `Za ${theme}?`;
+theme = theme === "bright" ? "dark" : "bright";
+document.querySelector("section > h2").textContent = `Too ${theme}?`;
 
-if(theme === "jasno") {
+if(theme === "bright") {
 setStyles(body, {"--background": "#FBFFF1", "--text": "#3C3744", "--accent": "#3A6254"});
 
 toggle.classList.remove("clicked");
