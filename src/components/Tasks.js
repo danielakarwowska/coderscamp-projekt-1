@@ -1,4 +1,4 @@
-export class ToDo {
+export class Task {
   constructor(title, notes, location, date = Date.now(), checked = false) {
     this.title = title;
     this.notes = notes;
@@ -18,3 +18,4 @@ export class ToDo {
     }
   }
 }
+window.Task = Task;
