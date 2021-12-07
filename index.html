@@ -6,25 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <title>To Do App</title>
-    <link rel="stylesheet" href="styles/main.scss" />
+    <title>TuDuDu</title>
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
-    
-      <form id = "to-do-form">
-       <input type="text" id="newTask"  name= "title"  placeholder="Add new task ">
-        <input type="text" id="notes" name="notes" placeholder="Notes">
-        <input type="text" id="location"  name= "location" placeholder="Location">
-
-        <button type="submit" id="add-button">Add task</button>
-      </form>
-
-    <ul id = "to-do-items">
-      <li id ='item'> 
-        <button class ="delete">X</button>
-      </li>
-    </ul>
-
-    <script src="src/index.js" defer></script>
+    <div id="todo-app">
+      <div id="logo">Welcome at TuDuDu</div>
+      <div id="navigation">
+      </div>
+      <div id="title"></div>
+      <div id="container">
+        <button class="button"><div class="buttonText">Sign in</div></button>
+        <button class="button"><div class="buttonText">Sign up</div></button>
+        <button class="button"><div class="buttonText">Guest</div></button>
+      </div>
+    </div>
+    <script src="src/index.js" type="module" defer></script>
   </body>
 </html>
