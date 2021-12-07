@@ -1,4 +1,4 @@
-import { weatherBox } from '../components/Weather';
+import { weatherBox } from '../components/weather';
 
 export class weatherApi {
   constructor() {}
