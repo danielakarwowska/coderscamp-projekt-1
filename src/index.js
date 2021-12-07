@@ -32,3 +32,5 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     weatherApi.getSearchMethod(searchTerm);
   }
 });
+
+console.log('test');
