@@ -7,7 +7,8 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>TuDuDu</title>
-    <link rel="stylesheet" href="styles/main.scss" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script defer type="module" src="./src/index.js" ></script>
   </head>
 
   <body>
@@ -26,6 +27,10 @@
         <input type="date" id="date" name="date" />
       </div>
     </div>
-    <script src="src/index.js" defer></script>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+      </div>
+    </template>
   </body>
 </html>
