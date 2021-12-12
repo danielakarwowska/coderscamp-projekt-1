@@ -8,25 +8,38 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>TuDuDu</title>
-    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
     <div id="todo-app">
-        <div id="logo">Welcome at TuDuDu</div>
-        <div id="navigation"></div>
+        <div id="logo">
+            <div class="center">
+              <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+              <div class="ball"></div>
+              <div class="linea izq"></div>
+              <div class="linea der"></div>
+              <div class="par izq"></div>
+              <div class="par der"></div>
 
-        <div id="title"></div>
+              <div class="quote">
+                <p>Plan today!</p>
+              </div>
+            </div>
+        </div>
         
-        <div id="container">
+
+       
+        
+        <div id="containerLoginFields">
             <div class="loginFields">
                 <input type="text" id="login" name="login" placeholder="Login" size="10">
                 <input type="text" id="password" name="password" placeholder="Password" size="10">
             </div>
             <div class="buttonArea">
+                <a href="taskPage.html">
                 <button class="button"><div class="buttonText">Sign in</div></button>
-                <button class="button"><div class="buttonText">Sign up</div></button>
-                <button class="button"><div class="buttonText">Guest</div></button>
+                </a>
             </div>
         </div>
     </div>
