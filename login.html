@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>TuDuDu</title>
-    <link rel="stylesheet" href="styles/login.css" />
-  </head>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
 
-  <body>
-    <div id="todo-app">
-      <div id="logo">Welcome at TuDuDu</div>
-      <div id="navigation"></div>
+<body>
 
-      <div id="title"></div>
-
-      <div id="container">
-        <div class="loginFields">
-          <input type="text" id="login" name="login" placeholder="Login" size="10" />
-          <input type="text" id="password" name="password" placeholder="Password" size="10" />
-        </div>
-        <div class="buttonArea">
-          <button class="button"><div class="buttonText">Sign in</div></button>
-          <button class="button"><div class="buttonText">Sign up</div></button>
-          <button class="button"><div class="buttonText">Guest</div></button>
-        </div>
+    <div class="wrapper">
+        <div class="sun"></div>
+        <section>
+        <h2>Too bright</h2>
+        <p>&#128071 &#128071 &#128071</p>
+        </section>
+        <button class="toggle" id="switch" onClick="toggleTheme()"></button>
       </div>
+    
+      <div id="logo">
+        <div class="center">
+          <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+          <div class="ball"></div>
+          <div class="linea izq"></div>
+          <div class="linea der"></div>
+          <div class="par izq"></div>
+          <div class="par der"></div>
+
+          <div class="quote">
+            <p>"Plan today!"</p>
+          </div>
+        </div>
+        
+
+        <div id="containerLoginFields">
+            <div class="loginFields">
+                <input type="text" id="login" name="login" placeholder="Login" size="10">
+                <input type="text" id="password" name="password" placeholder="Password" size="10">
+            </div>
+            
+                <a href="">
+                <button class="greenButtons" type="button">Sign in</button>
+                </a>
+            
+        </div>
     </div>
-    <div class="box"></div>
-    <script src="src/index.js" type="module"></script>
-  </body>
+    <script src="src/index.js" defer></script>
+    <script src="src/components/Theme.js" defer></script>
+</body>
+
 </html>
