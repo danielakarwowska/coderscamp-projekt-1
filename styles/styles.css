@@ -246,63 +246,33 @@ h1 {
     }
 }
 
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    
+}
+
 .container {
-  margin-top: 65vh;
+  margin-top: 5vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
+align-content: center;
 }
 
 .greenButtons {
   width: 16vh;
   height: 8vh;
   margin-right: 1vh;
+  margin-bottom: 5vh;
   background-color: var(--green-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 80px;
+  font-weight: bold;
 }
-
-.button {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem 0;
-  margin: 10 px;
-  
-}
-
-
-.front {
-position: absolute;
-left: 50%;
-  top: 50%;
-transform: translate(-50%,-50%);
-height: 70px;
-width: 200px;
-background-color: var(--background-color);
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 400;
-font-size: 1.6rem;
-color: #3C3744;
-cursor: pointer;
-transition: 0.5s;
-}
-
-.back {
-position: absolute;
-left: 50%;
-  top: 50%;
-transform: translate(-43%,-30%);
-height: 70px;
-width: 200px;
-background-color: var(--green-color);
-cursor: pointer;
-transition: 0.5s;
-} 
 
 .center {
   position: absolute;
