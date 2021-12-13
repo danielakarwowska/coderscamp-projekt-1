@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <title>TuDuDu</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sun"></div>
+        <section>
+        <h2>Too bright</h2>
+        <p>&#128071 &#128071 &#128071</p>
+        </section>
+        <button class="toggle" id="switch" onClick="toggleTheme()"></button>
+      </div>
+    
+        <div id="logo">
+            <div class="center">
+              <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+              <div class="ball"></div>
+              <div class="linea izq"></div>
+              <div class="linea der"></div>
+              <div class="par izq"></div>
+              <div class="par der"></div>
+
+              <div class="quote">
+                <p>Plan today!</p>
+              </div>
+            </div>
+        </div>
+        
+
+       
+        
+        <div id="containerLoginFields">
+            <div class="loginFields">
+                <input type="text" id="login" name="login" placeholder="Login" size="10">
+                <input type="text" id="password" name="password" placeholder="Password" size="10">
+            </div>
+            
+                <a href="taskPage.html">
+                <button class="greenButtons" type="button">Sign in</button>
+                </a>
+            
+        </div>
+    </div>
+    <script src="src/index.js" defer></script>
+    <script src="components/Theme.js" defer></script>
+</body>
+
+</html>
