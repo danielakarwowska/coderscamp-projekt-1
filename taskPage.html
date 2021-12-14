@@ -8,12 +8,35 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>TuDuDu</title>
-    <link rel="stylesheet" href="styles/taskPage.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
-    <div id="todo-app">
-        <div id="logo">TuDuDu</div>
+
+  <div class="wrapper">
+    <div class="sun"></div>
+    <section>
+    <h2>Too bright?</h2>
+    <p>&#128071 &#128071 &#128071</p>
+    </section>
+    <button class="toggle" id="switch" onClick="toggleTheme()"></button>
+  </div>
+    
+        <div id="logo">
+            <div class="center">
+              <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+              <div class="ball"></div>
+              <div class="linea izq"></div>
+              <div class="linea der"></div>
+              <div class="par izq"></div>
+              <div class="par der"></div>
+    
+              <div class="quote">
+                <p>"If a task is once begun, never leave it until it's done"</p>
+              </div>
+            </div>
+          </div>
         <div class="container">
         <!--Przycisk dodawania tasków-->
             <div id="navigation">
@@ -26,6 +49,7 @@
         </div>
     </div>
     <script src="src/index.js" defer></script>
+    <script src="src/components/Theme.js" defer></script>
 </body>
 
 </html>

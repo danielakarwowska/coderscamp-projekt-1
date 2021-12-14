@@ -1,61 +1,28 @@
-//import { ToDo } from "./components/Tasks";
-//import { weatherApi } from './api/weatherApi';
+const front = document.querySelector('.front')
+const back = document.querySelector('.back')
 
-
-console.log('test1');
-
-const todoForm = document.querySelector('#to-do-form');
-
-
-// This is the array that will hold the todo list items
-let toDoItems = [];
-
-
-
-/* 
-todoForm.addEventListener('submit', function(event){
-    const formData =Object.fromEntries( new FormData(this).entries());
-    let toDo = new ToDo(...Object.values(formData))
-    toDo.addTodo(toDoItems)
-    event.preventDefault();
-});
-
-
-
-// remove task
-let current_tasks = document.querySelectorAll(".delete");
-  for(let i=0; i<toDoItems.length; i++){
-       toDoItems[i].onclick = function(){
-        this.parentNode.remove();
-  };
-};
-
-document.getElementById('searchBtn').addEventListener('click', () => {
-  let searchTerm = document.getElementById('searchInput').value;
-  if (searchTerm) {
-    weatherApi.getSearchMethod(searchTerm);
-  }
-});
-
-
-*/
-
-
-
-function register () {
-  const login = document.getElementById('login');
-  const mail = document.getElementById('mail');
-  const password = document.getElementById('password');
-  localStorage.setItem ("login", login.value );
-  localStorage.setItem ("password", password.value);
-  localStorage.setItem ("mail", mail.value);
-};
-
-
-function login () {
-  const loginToApp = document.getElementById('login-in-login');
-  const passwordToApp = document.getElementById('password-in-login');
-
-  
-
+const on = () => {
+    front.style.transform = 'translate(-43%,-30%)'
+    front.style.backgroundColor = '#3A6254'
+    front.style.color = '#E5E5E5'
+    back.style.transform = 'translate(-50%,-50%)'
+    back.style.backgroundColor = '#E5E5E5'
 }
+
+const off = () => {
+    front.style.transform = 'translate(-50%,-50%)'
+    front.style.backgroundColor = '#E5E5E5'
+    front.style.color = '#3C3744'
+    back.style.transform = 'translate(-43%,-30%)'
+   back.style.backgroundColor = '#3A6254'
+}
+
+
+front.addEventListener('mouseover', on)
+back.addEventListener('mouseover', on)
+front.addEventListener('mouseleave', off)
+back.addEventListener('mouseleave', off)
+
+
+
+
