@@ -1,4 +1,6 @@
-import { ToDo } from "./components/Tasks";
+//import { ToDo } from "./components/Tasks";
+//import { weatherApi } from './api/weatherApi';
+
 
 console.log('test1');
 
@@ -10,6 +12,7 @@ let toDoItems = [];
 
 
 
+/* 
 todoForm.addEventListener('submit', function(event){
     const formData =Object.fromEntries( new FormData(this).entries());
     let toDo = new ToDo(...Object.values(formData))
@@ -26,7 +29,6 @@ let current_tasks = document.querySelectorAll(".delete");
         this.parentNode.remove();
   };
 };
-import { weatherApi } from './api/weatherApi';
 
 document.getElementById('searchBtn').addEventListener('click', () => {
   let searchTerm = document.getElementById('searchInput').value;
@@ -35,3 +37,25 @@ document.getElementById('searchBtn').addEventListener('click', () => {
   }
 });
 
+
+*/
+
+
+
+function register () {
+  const login = document.getElementById('login');
+  const mail = document.getElementById('mail');
+  const password = document.getElementById('password');
+  localStorage.setItem ("login", login.value );
+  localStorage.setItem ("password", password.value);
+  localStorage.setItem ("mail", mail.value);
+};
+
+
+function login () {
+  const loginToApp = document.getElementById('login-in-login');
+  const passwordToApp = document.getElementById('password-in-login');
+
+  
+
+}
