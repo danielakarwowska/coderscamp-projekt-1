@@ -8,28 +8,52 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>TuDuDu</title>
-    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="src/index.js" defer></script>
+    <script src="src/components/Theme.js" defer></script>
 </head>
 
 <body>
-    <div id="todo-app">
-        <div id="logo">Welcome at TuDuDu</div>
-        <div id="navigation"></div>
+    
+    <div class="wrapper">
+        <div class="sun"></div>
+        <section>
+        <h2>Too bright?</h2>
+        <p>&#128071 &#128071 &#128071</p>
+        </section>
+        <button class="toggle" id="switch" onClick="toggleTheme()"></button>
+      </div>
 
-        <div id="title"></div>
+      <div id="logo">
+        <div class="center">
+          <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+          <div class="ball"></div>
+          <div class="linea izq"></div>
+          <div class="linea der"></div>
+          <div class="par izq"></div>
+          <div class="par der"></div>
+
+            <div class="quote">
+            <p>"The most effective way to do it, is to do it."</p>
+            </div>
+          </div>
+    
+      </div>
+  
        
-        <div id="container">
+        <div id="containerLoginFields">
             <div class="loginFields">
                 <input type="text" key="login" id="login" name="login" placeholder="Login" size="10">
                 <input type="text" key="mail" id="mail" name="mail" placeholder="E-mail" size="10">
                 <input type="password" key="password" id="password" name="password" placeholder="Password" size="10">
             </div>
             <div class="buttonArea">
-                <button  type= "button" onclick="register()" class="button" ><div class="buttonText">Sign up</div></button>
+                <button  type= "button" onclick="register()" class="greenButtons" ><div class="buttonText">Sign up</div></button>
             </div>
         </div>
-    </div>
-    <script src="src/index.js" defer></script>
+    
+   
 </body>
 
 </html>
