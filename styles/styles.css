@@ -485,7 +485,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
   margin-top: 10vh;
   
 }
@@ -498,7 +497,7 @@ input {
   text-align: center;
   color:var(--background-color);
 }
-#password-in-login, #login-in-login, #login, #mail, #password {
+#password-in-login, #login-in-login, #username, #mail, #password {
   width: 40vw;
   height: 15vh;
   max-height: 50px;
