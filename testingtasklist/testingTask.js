@@ -1,10 +1,11 @@
 // Class: represent task
 class Task {
-    constructor(title, description, city, date){
+    constructor(title, description, city, date, number = Math.random().toString()){
         this.title = title;
         this.description = description;
         this.city = city;
         this.date = date;
+        this.number = number;
     }
 }
 
@@ -27,8 +28,16 @@ class Store {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
     // TODO
-    static removeTask(title) {
+    static removeTask(number) {
         const tasks = Store.getTasks();
+
+         tasks.forEach((task, index) => {
+             if(task.number === number) {
+                 tasks.splice(index, 1);
+             }
+         });
+
+         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
 
@@ -42,22 +51,34 @@ class UI {
 
     static addTaskToList(task) {
         const list = document.getElementById('task-list');
-
         const row = document.createElement('tr');
         row.innerHTML = `
         <td>${task.title}</td>
         <td>${task.description}</td>
         <td>${task.city}</td>
         <td>${task.date}</td>
+        <td><style = "display : none;">${task.number}</style></td>
         <td><a href='#' class="btn delete">X</a></td>
         `;
+        const column = document.createElement('tr');
+        column.innerHTML = `
+        <td>
+        <details>
+        <summary> Description </summary>
+        <p>${task.description}</p>
+        </details>
+        </td>
+         `;
 
         list.appendChild(row);
+        list.appendChild(column);
     }
 
     static deleteTask(el) {
         if(el.classList.contains('delete')) {
-            el.parentElement.parentElement.remove();
+            el.closest('tr').nextElementSibling.remove();
+            el.closest('tr').remove();
+
         }
     }
     // failed to add task
@@ -135,7 +156,7 @@ document.getElementById('task-list').addEventListener('click', (e) => {
     UI.deleteTask(e.target);
 
     //task removed from store TODO
-    Store.removeTask();
+    Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
 
     //Task removed
     UI.ShowAlertSuccess('Task Removed');
