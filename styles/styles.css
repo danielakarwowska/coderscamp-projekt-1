@@ -485,8 +485,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  margin-top: 30vh;
+  margin-top: 10vh;
   
 }
 
@@ -498,7 +497,7 @@ input {
   text-align: center;
   color:var(--background-color);
 }
-#password, #login {
+#password-in-login, #login-in-login, #username, #mail, #password {
   width: 40vw;
   height: 15vh;
   max-height: 50px;
@@ -509,6 +508,27 @@ input {
   background: rgba(106, 106, 106, 0.5);
   border-radius: 80px;
 }
+
+.buttonsLoginPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    width: 12vh;
+  height: 6vh;
+  margin-right: 1vh;
+  margin-bottom: 5vh;
+  background-color: var(--green-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  font-weight: bold;
+}
+
+.margin-left {
+margin-left: 5vh;
+}
+
 
 .buttonLogin {
   width: 16vh;
