@@ -9,6 +9,8 @@ export class User{
     registerUser(){
         console.log('register');
         localStorage.getItem(this.mail) ? alert('already exist') : localStorage.setItem(this.mail,JSON.stringify(this))
+        window.location.replace('taskPage.html')
+
     }
 
 
