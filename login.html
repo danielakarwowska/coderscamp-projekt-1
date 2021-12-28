@@ -10,7 +10,7 @@
     <title>TuDuDu</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="src/index.js" defer></script>
+    <script  src="src/index.js"  type= "module" defer></script>
     <script src="src/components/Theme.js" defer></script>
 </head>
 
@@ -43,17 +43,19 @@
       </div>
         
         <div id="containerLoginFields">
+          <form id="form-login">
             <div class="loginFields">
-                <input type="text" id="login-in-login" name="login" placeholder="Login" size="10">
-                <input type="text" id="password-in-login" name="password" placeholder="Password" size="10">
+                <input type="text"  name="mail" placeholder="mail" size="10">
+                <input type="password" id="password-in-login" name="password" placeholder="Password" size="10">
             </div>
             <div class="buttonArea">
-                <button class="greenButtons margin-left"><div class="buttonText">Sign in</div></button>
+                <button type="button" class="greenButtons margin-left"><div class="buttonText" id="login" >Sign in</div></button>
                 <div class="buttonsLoginPage">
                 <button class="button"><div class="buttonText"><a href ="register.html"> Sign up</a></div></button>
                 <button class="button"><div class="buttonText"><a href="taskPage.html">Guest</a></div></button>
                 </div>
             </div>
+          </form>
         </div>
     
     
