@@ -134,9 +134,9 @@ section > p:last-of-type {
   transform: translateY(-30%);
 }
 
-@media screen and (max-height: 560px) {
+/* @media screen and (max-height: 560px) {
   .sun, .sun::after {
     margin-bottom: calc(-6rem - 12vh);
     z-index: -1;
   }
-}
+} */
