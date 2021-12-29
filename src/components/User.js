@@ -1,13 +1,26 @@
 export class User{
-    constructor(login, mail, password){
+    constructor(mail, password){
         //this.id = uuidv4()
-        this.login= login;
         this.mail= mail;
         this.password= password;
     }
+    //let user = new User(username, password)
+
     registerUser(){
-        localStorage.getItem(this.login) ? alert('already exist') : localStorage.setItem(this.login,JSON.stringify(this))
+        console.log('register');
+        localStorage.getItem(this.mail) ? alert('already exist') : localStorage.setItem(this.mail,JSON.stringify(this))
+        window.location.replace('taskPage.html')
+
     }
-    //loginUser() {
-       // if(localStorage.getItem(this.login) === )
-    }
+
+
+   loginUser() {
+    let {mail, password} = JSON.parse(localStorage.getItem(this.mail));
+      if(mail === this.mail && window.atob(password) === this.password) {
+      let user = Object.assign(new User, JSON.parse(localStorage.getItem('mail')))
+        window.location.replace('taskPage.html')
+     }else {
+          alert ( "Wrong e-mail or password");
+      }
+   };
+}
