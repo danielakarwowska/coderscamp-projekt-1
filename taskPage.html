@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/main.css" />
     <script src="src/index.js" defer></script>
     <script src="src/components/Theme.js" defer></script>
+    <script type= "module" src="src/api/placesApi.js" defer ></script>
+
 </head>
 
 <body>
@@ -54,6 +56,30 @@
             <div id="tasks">
           <input type="checkbox" id="taskCheckbox" name="taskCheckbox">
             </div>
+        </div>
+        <div id = "placesContainer">
+          <label>Wybierz miasto z listy:</label> 
+            <select>
+              <option id= "bialystok" value="Białystok" selected>Białystok</option>
+              <option value="Bydgoszcz">Bydgoszcz</option>
+              <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+              <option value="Katowice">Katowice</option>
+              <option value="Kielce">Kielce</option>
+              <option value="Kraków">Kraków</option>
+              <option value="Lublin">Lublin</option>
+              <option value="Łódź">Łódź</option>
+              <option value="Olsztyn">Olsztyn</option>
+              <option value="Opole">Opole</option>
+              <option value="Poznań">Poznań</option>
+              <option value="Rzeszów">Rzeszów</option>
+              <option value="Szczecin">Szczecin</option>
+              <option value="Toruń">Toruń</option>
+              <option value="Warszawa">Warszawa</option>
+              <option value="Wrocław">Wrocław</option>
+              <option value="Zielona Góra">Zielona Góra</option>
+           </select>
+
+
         </div>
 
 
