@@ -1,24 +1,5 @@
 //import { PlacesBox } from '../src/api/Places.js';
-
-//import dotenv from '../../node_modules/dotenv'
-//dotenv.config();
-//const dotenv = require('dotenv');
-
-//dotenv.config();
-
-//('dotenv').config();
-
-//console.log(process.env);
-
-//const api_key = process.env.API_KEY;
-//console.log(api_key);
-//assigning a geographical location to selected cities
-//let bialystok = document.getElementById('bialystok');
-
-//require('dotenv').config({ path: require('find-config')('.env') })
-
-let api_key = config.SECRET_API_KEY;
-
+import API_KEY from "../apikey.js";
 
 export class PlacesApi {
     constructor(lat,lng){
@@ -27,7 +8,7 @@ export class PlacesApi {
     }
 
 getCurrentRestaurant (){
-fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
 .then(response =>
 response.json()
 .then(response => {
@@ -41,7 +22,7 @@ response.json()
 }
 
 getCurrentMuseum (){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
     .then(response => {
@@ -54,7 +35,7 @@ getCurrentMuseum (){
     }))
     }
 getCurrentPark (){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
      .then(response => {
