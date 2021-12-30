@@ -1,4 +1,5 @@
 //import { PlacesBox } from '../src/api/Places.js';
+<<<<<<< HEAD
 
 //import dotenv from '../../node_modules/dotenv'
 //dotenv.config();
@@ -17,6 +18,9 @@
 
 //require('dotenv').config({ path: require('find-config')('.env') })
 
+=======
+import API_KEY from "../apikey.js";
+>>>>>>> 444bc49763815bc650a9377e03b563fd9f68c402
 
 export class PlacesApi {
     constructor(lat,lng){
@@ -25,7 +29,11 @@ export class PlacesApi {
     }
 
 getCurrentRestaurant (){
+<<<<<<< HEAD
 fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=AIzaSyB726lkXiXXK-JdvLayLFbupwx4LakSq4g`)
+=======
+fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
+>>>>>>> 444bc49763815bc650a9377e03b563fd9f68c402
 .then(response =>
 response.json()
 .then(response => {
@@ -39,7 +47,7 @@ response.json()
 }
 
 getCurrentMuseum (){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
     .then(response => {
@@ -52,7 +60,7 @@ getCurrentMuseum (){
     }))
     }
 getCurrentPark (){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
      .then(response => {
