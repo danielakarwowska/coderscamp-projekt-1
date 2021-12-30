@@ -29,5 +29,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
   }
 }

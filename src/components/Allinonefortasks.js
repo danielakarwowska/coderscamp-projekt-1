@@ -66,6 +66,41 @@ class UI {
         <details>
         <summary> Description </summary>
         <p>${task.description}</p>
+        <div id = "placesContainer">
+        <label>Wybierz miasto z listy by zobaczyć ciekawe miejsca w okolicy:</label> 
+          <select>
+            <option id= "bialystok" value="Białystok" selected>Białystok</option>
+            <option value="Bydgoszcz">Bydgoszcz</option>
+            <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+            <option value="Katowice">Katowice</option>
+            <option value="Kielce">Kielce</option>
+            <option value="Kraków">Kraków</option>
+            <option value="Lublin">Lublin</option>
+            <option value="Łódź">Łódź</option>
+            <option value="Olsztyn">Olsztyn</option>
+            <option value="Opole">Opole</option>
+            <option value="Poznań">Poznań</option>
+            <option value="Rzeszów">Rzeszów</option>
+            <option value="Szczecin">Szczecin</option>
+            <option value="Toruń">Toruń</option>
+            <option value="Warszawa">Warszawa</option>
+            <option value="Wrocław">Wrocław</option>
+            <option value="Zielona Góra">Zielona Góra</option>
+         </select>
+<div id= "restaurantContainer">
+<h1 id= "nameRestaurant"> </h1>
+</div>
+<div id= "museumContainer"></div>
+<div id= "parkContainer"> 
+<div id="name"></div>
+
+
+<div></div>
+</div>
+
+
+     </div>
+
         </details>
         </td>
          `;
