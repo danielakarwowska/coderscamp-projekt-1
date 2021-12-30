@@ -28,7 +28,6 @@ export class weatherApi {
   static gatherWeatherData(data) {
     const { weather, main, name } = data;
     const result = {
-      weatherIcon: 'http://openweathermap.org/img/wn/' + weather[0].icon + '.png',
       weatherDescriptionHeader: weather[0].description.charAt(0).toUpperCase() + weather[0].description.slice(1),
       temperature: Math.floor(main.temp) + '&#176',
       cityHeader: name,
