@@ -17,8 +17,6 @@
 
 //require('dotenv').config({ path: require('find-config')('.env') })
 
-let api_key = config.SECRET_API_KEY;
-
 
 export class PlacesApi {
     constructor(lat,lng){
@@ -27,12 +25,12 @@ export class PlacesApi {
     }
 
 getCurrentRestaurant (){
-fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=`)
+fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=AIzaSyB726lkXiXXK-JdvLayLFbupwx4LakSq4g`)
 .then(response =>
 response.json()
 .then(response => {
     console.log(response);
-    let box = new PlacesBox(this.gatherPlacesData(response), document.getElementById('restaurantContainer'));
+    // let box = new PlacesBox(this.gatherPlacesData(response), document.getElementById('restaurantContainer'));
     //box.addElement();
 })
 .catch(error =>{
@@ -46,7 +44,7 @@ getCurrentMuseum (){
     response.json()
     .then(response => {
     console.log(response);
-    let box = new PlacesBox(this.gatherPlacesData(response), document.getElementById('museumContainer'));
+    // let box = new PlacesBox(this.gatherPlacesData(response), document.getElementById('museumContainer'));
     //box.addElement();
     })
     .catch(error =>{
@@ -59,7 +57,7 @@ getCurrentPark (){
     response.json()
      .then(response => {
     console.log(response);
-    let box = new PlacesBox(this.gatherPlacesData(response) , document.getElementById('parkContainer' ));
+    // let box = new PlacesBox(this.gatherPlacesData(response) , document.getElementById('parkContainer' ));
     //box.addElement();
         })
         .catch(error =>{

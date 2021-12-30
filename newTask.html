@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/602ba1bef5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="">
-    <script src="./src/components/Allinonefortasks.js" defer></script>
+    <script src="./src/components/Allinonefortasks.js" defer type="module"></script>
  <script type="module" src="/src/api/placesAPI.js" defer></script>
     <title>My List</title>
 </head>
@@ -27,13 +27,32 @@
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
-                    <input type="text" id="city" class="form-control">
+                    <div id = "placesContainer">
+                          <select> 
+                            <option id="bialystok" value="Białystok" selected>Białystok</option>
+                            <option value="Bydgoszcz">Bydgoszcz</option>
+                            <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+                            <option value="Katowice">Katowice</option>
+                            <option value="Kielce">Kielce</option>
+                            <option value="Kraków">Kraków</option>
+                            <option value="Lublin">Lublin</option>
+                            <option value="Łódź">Łódź</option>
+                            <option value="Olsztyn">Olsztyn</option>
+                            <option value="Opole">Opole</option>
+                            <option value="Poznań">Poznań</option>
+                            <option value="Rzeszów">Rzeszów</option>
+                            <option value="Szczecin">Szczecin</option>
+                            <option value="Toruń">Toruń</option>
+                            <option value="Warszawa">Warszawa</option>
+                            <option value="Wrocław">Wrocław</option>
+                            <option value="Zielona Góra">Zielona Góra</option>
+                         </select>
                 </div>
                 <div class="form-group">
                     <label for="title">Date</label>
                     <input type="date" id="date" class="form-control">
                 </div>
-                <input type="submit" value="Add Task"
+                <input type="submit" value="Add Task" 
                 class="btn btn-primary btn-block">
             </form>
             <table class="table table-sortable">
