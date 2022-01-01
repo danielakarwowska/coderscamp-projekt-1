@@ -3,7 +3,9 @@
 * {
     box-sizing: border-box;
 }
-
+#register {
+    opacity: 0.5;
+}
 .theme-bright {
     --background-color: #e5e5e5;
     --green-color: #3A6254;
