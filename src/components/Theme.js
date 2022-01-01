@@ -24,3 +24,14 @@ function toggleTheme() {
     setTheme('theme-bright')
   }
 })();
+
+function terms_changed(termsCheckBox) {
+  if(termsCheckBox.checked){
+      document.getElementById("register").disabled = false;
+      document.getElementById("register").style.opacity = 1;
+
+  } else{
+      document.getElementById("register").disabled = true;
+      document.getElementById("register").style.opacity = 0.5;
+  }
+}

@@ -45,15 +45,27 @@
         <div id="containerLoginFields">
           <form id="form">
             <div class="loginFields">
-                <input type="text" key="mail" id="mail" name="mail" placeholder="E-mail" size="10">
-                <input type="password" key="password" id="password" name="password" placeholder="Password" size="10">
+              <input type="text" key="mail" id="mail" name="mail" placeholder="E-mail" size="10">
+              <input type="password" key="password" id="password" name="password" placeholder="Password" size="10">
             </div>
+        
+            <div class="rodo">
+              <input type="checkbox" name="rodo" id="rodo" value="1" onclick="terms_changed(this)" />
+              <label for="rodo">Zgadzam się na udostępnianie lokalizacji.</label>
+            </div>
+        
             <div class="buttonArea">
-                <button  type= "button" id ="register" class="greenButtons" ><div class="buttonText">Sign up</div></button>
-                <button class="greenButtons margin-left"><div class="buttonText"><a href="login.html">Sign in</a></div></button>
-                <div class="buttonsLoginPage">
-                <button class="button"><div class="buttonText"><a href="taskPage.html">Guest</a></div></button>
-            </div>
+              <button type="button" id="register" class="greenButtons" disabled>
+                <div class="buttonText">Sign up</div>
+              </button>
+              <button class="greenButtons margin-left">
+                <div class="buttonText"><a href="login.html">Sign in</a></div>
+              </button>
+              <div class="buttonsLoginPage">
+                <button class="button">
+                  <div class="buttonText"><a href="taskPage.html">Guest</a></div>
+                </button>
+              </div>
           </form>
         </div>
     
