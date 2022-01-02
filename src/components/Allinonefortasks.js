@@ -56,29 +56,41 @@ class UI {
         const row = document.createElement('tr');
         row.innerHTML = `
         <td>${task.title}</td>
-        <td>${task.description}</td>
         <td>${task.city}</td>
         <td>${task.date}</td>
         <td><style = "display : none;">${task.number}</style></td>
         <td><a href='#' class="btn delete">X</a></td>
-        `;
-        const column = document.createElement('tr');
-        column.innerHTML = `
         <td>
-        <details>
-        <summary> Description </summary>
-        <p>${task.description}</p>
-        <div id='weatherContainer'>
-            <div id='cityHeader'></div>
-            <div id='weatherDescriptionHeader'></div>
-            <div id='temperature'></div>
+        <div class="description-drop-down">
+          <details>
+          <summary> Description </summary>
+          <p>${task.description}</p>
+          <div id='weatherContainer${task.number}'>
+              <div id='cityHeader${task.number}'></div>
+              <div id='weatherDescriptionHeader${task.number}'></div>
+              <div id='temperature${task.number}'></div>
+          </div>
+          </details>
         </div>
-        </details>
         </td>
-         `;
+        `;
+        // const column = document.createElement('tr');
+        // column.innerHTML = `
+        // <td id='description${task.number} class="description-drop-down"'>
+        // <details>
+        // <summary> Description </summary>
+        // <p>${task.description}</p>
+        // <div id='weatherContainer${task.number}'>
+        //     <div id='cityHeader${task.number}'></div>
+        //     <div id='weatherDescriptionHeader${task.number}'></div>
+        //     <div id='temperature${task.number}'></div>
+        // </div>
+        // </details>
+        // </td>
+        //  `;
 
         list.appendChild(row);
-        list.appendChild(column);
+        //list.appendChild(column);
     }
 
     static deleteTask(el) {
@@ -120,6 +132,8 @@ class UI {
         document.getElementById('city').value = '';
         document.getElementById('date').value = '';
     }
+
+    
 }
 
 // Event dsiplay tasks
@@ -162,20 +176,24 @@ document.getElementById('task-list').addEventListener('click', (e) => {
     //task removed from UI
     UI.deleteTask(e.target);
 
-    //task removed from store TODO
+    //task removed from store 
     Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
 
     //Task removed
     UI.ShowAlertSuccess('Task Removed');
 });
 
-document.getElementById("guzik").addEventListener("click", () => {
-    let searchTerm = document.getElementById("city").value;
-    if (searchTerm) { 
-        weatherApi.getSearchMethod(searchTerm) 
-      };
-  
-  });
+
+//////////////////// TODO - TU ZMIANA NA ROZWIJANIE ///////////////////
+document.querySelectorAll("description-drop-down").forEach(el => {
+  el.addEventListener("click", () => {
+  // let searchTerm = document.getElementById("city").value;
+  // if (searchTerm) { 
+  //     weatherApi.getSearchMethod(searchTerm, taskNumber) 
+  //   };
+  console.log("sprawdzam");
+})});
+
 
 
 /* NOTATKI DLA NIESZCZĘŚNIKA, KTÓRY BĘDZIE MUSIAŁ TO WYSTYLIZOWAĆ
@@ -210,7 +228,7 @@ function sortTableByColumn(table, column, asc = true) {
 
     table.querySelectorAll('th').forEach(th => th.classList.remove('th-sort-asc', 'th-sort-desc'));
     table.querySelector(`th:nth-child(${column + 1})`).classList.toggle('th-sort-asc', asc);
-    table.querySelector(`th:nth-child(${column + 1})`).classList.toggle('th-sort-desc', !asc);a
+    table.querySelector(`th:nth-child(${column + 1})`).classList.toggle('th-sort-desc', !asc);
 }
 
 document.querySelectorAll('.table-sortable th').forEach(headerCell => {
@@ -242,8 +260,7 @@ class weatherApi {
           return response.json();
         })
         .then((response) => {
-          let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'));
-          Box.addElement();
+          let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'), taskNumber);
         })
         .catch((err) => {
           console.log(err);
@@ -263,19 +280,19 @@ class weatherApi {
   }
 
   class weatherBox {
-    constructor(data, container) {
+    constructor(data, container, taskNumber) {
       this.data = data;
       this.container = container;
-      this.setWeatherData();
+      this.setWeatherData(taskNumber);
     }
   
   
-    setWeatherData() {
+    setWeatherData(taskNumber) {
       for (const [key, value] of Object.entries(this.data)) {
         try {
           key != 'weatherIcon'
-            ? (document.getElementById(key).innerHTML = value)
-            : (document.getElementById(key).src = value);
+            ? (document.getElementById(`${key}${taskNumber}`).innerHTML = value)
+            : (document.getElementById(`${key}${taskNumber}`).src = value);
         } catch (err) {
           key != 'state' ? console.log('Wrong ID') : false;
         }

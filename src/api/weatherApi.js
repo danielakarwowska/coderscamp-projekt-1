@@ -17,8 +17,7 @@ export class weatherApi {
         return response.json();
       })
       .then((response) => {
-        let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'));
-        Box.addElement();
+        let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'), taskNumber);
       })
       .catch((err) => {
         console.log(err);
