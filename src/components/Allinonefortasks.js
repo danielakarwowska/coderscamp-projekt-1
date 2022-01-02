@@ -154,8 +154,6 @@ class UI {
 UI.displayTasks();
 
 
-
-
 //add a task
 document.getElementById('task-form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -243,3 +241,14 @@ document.querySelectorAll('.table-sortable th').forEach(headerCell => {
         sortTableByColumn(tableElement, headerIndex, !currentIsAsc);
     });
 });
+
+//Adding citys to arry in local storage
+
+const citysArr = []
+function addToCitysArr() {
+    city = document.getElementById('city').value;
+    citysArr.push(city);
+    console.log(citysArr);
+    sessionStorage.setItem("citysArr", JSON.stringify(citysArr));
+}
+
