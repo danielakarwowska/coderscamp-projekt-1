@@ -1,23 +1,25 @@
-import { weatherBox } from '../components/Weather';
+import WeatherBox from '../components/WeatherBox.js';
 
-export class weatherApi {
+export default class WeatherApi {
   constructor() {}
 
-  static getSearchMethod(searchTerm) {
+  static getSearchMethod(searchTerm, taskNumber) {
     if (searchTerm.lenght === 5 && Number.parseInt(searchTerm) + '' === searchTerm) {
-      weatherApi.getCurrentWeather('zip', searchTerm);
+      WeatherApi.getCurrentWeather('zip', searchTerm, taskNumber);
     } else {
-      weatherApi.getCurrentWeather('q', searchTerm);
+      WeatherApi.getCurrentWeather('q', searchTerm, taskNumber);
     }
   }
 
-  static getCurrentWeather(searchMethod, searchTerm, units = 'metric', appId = '2a5cc3af57a0f47a0d85d5a5a7e2f7de') {
+  static getCurrentWeather(searchMethod, searchTerm, taskNumber) {
+    const units = 'metric'; 
+    const appId = '2a5cc3af57a0f47a0d85d5a5a7e2f7de';
     fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
       .then((response) => {
         return response.json();
       })
       .then((response) => {
-        let Box = new weatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'), taskNumber);
+        let Box = new WeatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'), taskNumber);
       })
       .catch((err) => {
         console.log(err);

@@ -1,4 +1,4 @@
-export class weatherBox {
+export default class WeatherBox {
   constructor(data, container, taskNumber) {
     this.data = data;
     this.container = container;
