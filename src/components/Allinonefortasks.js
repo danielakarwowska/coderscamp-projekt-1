@@ -2,6 +2,7 @@ import WeatherApi from '../api/WeatherApi.js';
 import Task from '../components/Task.js';
 import Store from '../components/Store.js';
 import UI from '../components/UI.js';
+import { PlacesApi } from '../api/PlacesApi.js';
 
 
 // Event dsiplay tasks
@@ -49,15 +50,26 @@ Array.from(document.getElementsByClassName('delete')).forEach(e => {
     UI.ShowAlertSuccess('Task Removed');
 })});
 
-//////////////////// TODO - TU ZMIANA NA ROZWIJANIE ///////////////////
+// displaying description places
 Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
   el.addEventListener("click", () => {
     const taskNumber = el.id.split('-')[1];
-    let searchTerm = document.getElementById(`city-${taskNumber}`).innerText;
+    let searchTerm = document.getElementById(`${taskNumber}`).innerText;
    if (searchTerm) { 
       WeatherApi.getSearchMethod(searchTerm, taskNumber) 
      };
 })});
+
+Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
+    el.addEventListener("click", () => {
+      const taskNumber = el.id.split('-')[1];
+      let searchTerm = document.getElementById('placesContainer').innerText;
+     if (searchTerm) { 
+         PlacesApi.getCurrentRestaurant(searchTerm, taskNumber)
+         PlacesApi.getCurrentMuseum(searchTerm, taskNumber)
+         PlacesApi.getCurrentPark(searchTerm, taskNumber)   
+    };
+  })});
 
 
 

@@ -26,6 +26,18 @@ export default class UI {
               <div id='weatherDescriptionHeader${task.number}'></div>
               <div id='temperature${task.number}'></div>
           </div>
+          <div id='restaurantContainer${task.number}'>
+            <div id='nameRestaurant${task.number}'></div>
+            <div id='addressRestaurant${task.number}'></div>
+          </div>
+          <div id='museumContainer${task.number}'>
+            <div id='nameMuseum${task.number}'></div>
+            <div id='addressMuseum${task.number}'></div>
+          </div>
+          <div id='parkContainer${task.number}'>
+            <div id='namePark${task.number}'></div>
+            <div id='addressPark${task.number}'></div>
+          </div>
           </details>
         </div>
         </td>
