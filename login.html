@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-
     <title>TuDuDu</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <script  src="src/index.js"  type= "module" defer></script>
     <script src="src/components/Theme.js" defer></script>
 </head>
-
 <body>
-    
     <div class="wrapper" id="wrapper">
         <div class="sun"></div>
         <section>
@@ -23,9 +19,7 @@
         <p>&#128071 &#128071 &#128071</p>
         </section>
         <button class="toggle" id="switch" onClick="toggleTheme()"></button>
-      </div>
-
-      
+      </div>     
       <div id="logo">
         <div class="center">
           <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
@@ -34,29 +28,19 @@
           <div class="linea der"></div>
           <div class="par izq"></div>
           <div class="par der"></div>
-
             <div class="quote">
             <p>"Do not wait until the conditions are perfect to <br>begin. Beginning makes the conditions perfect."</p>
             </div>
           </div>
-    
       </div>
-        
         <div id="containerLoginFields">
-          <form id="form-login">
+          <form id="form-login" method="POST">
             <div class="loginFields">
-
                 <input type="text" id= "login-in-login" name="mail" placeholder="E-mail" size="10">
                 <input type="password" id="password-in-login" name="password" placeholder="Password" size="10">
-
-
             </div>
-
             <div class="buttonArea">
-
-                <button class="greenButtons"><div class="buttonText">Sign in</div></button>
-                
-
+                <button class="greenButtons" id="login"><div class="buttonText">Sign in</div></button>              
             <div class="buttonsLoginPage">
                 <button class="button"><div class="buttonText"><a href ="register.html"> Sign up</a></div></button>
                 <button class="button"><div class="buttonText"><a href="newTask.html">Guest</a></div></button>
@@ -64,8 +48,5 @@
             </div>
           </form>
         </div>
-    
-    
 </body>
-
 </html>

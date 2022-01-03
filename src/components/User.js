@@ -9,17 +9,15 @@ export class User{
     registerUser(){
         console.log('register');
         localStorage.getItem(this.mail) ? alert('already exist') : localStorage.setItem(this.mail,JSON.stringify(this))
-        window.location.replace('newTask.html')
-
+        window.location.replace('newTask.html');
     }
-
 
    loginUser() {
     let {mail, password} = JSON.parse(localStorage.getItem(this.mail));
       if(mail === this.mail && window.atob(password) === this.password) {
       let user = Object.assign(new User, JSON.parse(localStorage.getItem('mail')))
-        window.location.replace('newTask.html')
-     }else {
+        window.location.replace('newTask.html');
+     } else {
           alert ( "Wrong e-mail or password");
       }
    };

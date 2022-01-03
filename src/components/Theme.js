@@ -36,7 +36,7 @@ function terms_changed(termsCheckBox) {
   }
 }
 
-//Adding citys to arry in local storage
+//Adding cities to array in session storage
 
 const citysArr = []
 function addToCitysArr() {

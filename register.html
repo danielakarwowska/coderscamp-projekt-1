@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-
     <title>TuDuDu</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <script src="src/index.js" type= "module" defer></script>
     <script src="src/components/Theme.js" defer></script>
 </head>
-
 <body>
-    
     <div class="wrapper" id="wrapper">
         <div class="sun"></div>
         <section>
@@ -24,7 +20,6 @@
         </section>
         <button class="toggle" id="switch" onClick="toggleTheme()"></button>
       </div>
-
       <div id="logo">
         <div class="center">
           <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
@@ -33,37 +28,28 @@
           <div class="linea der"></div>
           <div class="par izq"></div>
           <div class="par der"></div>
-
             <div class="quote">
             <p>"The most effective way to do it, is to do it."</p>
             </div>
           </div>
-    
       </div>
-  
-      
       <div id="containerLoginFields">
-        <form id="form">
+        <form id="form" method="POST">
           <div class="loginFields">
             <input type="text" key="mail" id="mail" name="mail" placeholder="E-mail" size="10">
             <input type="password" key="password" id="password" name="password" placeholder="Password" size="10">
           </div>
-
           <div class="rodo">
             <input type="checkbox" name="rodo" id="rodo" value="1" onclick="terms_changed(this)" />
             <label for="rodo">Zgadzam się na udostępnianie lokalizacji.</label>
           </div>
-          
             <div class="buttonArea">
-                <button  type= "button" id ="register" class="greenButtons" ><div class="buttonText">Sign up</div></button>
+                <button type="button" id="register" class="greenButtons"><div class="buttonText">Sign up</div></button>
                 <button class="greenButtons margin-left"><div class="buttonText"><a href="login.html">Sign in</a></div></button>
                 <div class="buttonsLoginPage">
                 <button class="button"><div class="buttonText"><a href="newTask.html">Guest</a></div></button>
             </div>
           </form>
         </div>
-    
-   
 </body>
-
 </html>
