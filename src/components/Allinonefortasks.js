@@ -1,154 +1,8 @@
-// Class: represent task
-class Task {
-    constructor(title, description, city, date, number = Math.random().toString()){
-        this.title = title;
-        this.description = description;
-        this.city = city;
-        this.date = date;
-        this.number = number;
-    }
-}
+import WeatherApi from '../api/WeatherApi.js';
+import Task from '../components/Task.js';
+import Store from '../components/Store.js';
+import UI from '../components/UI.js';
 
-//Store
-class Store {
-    static getTasks() {
-        let tasks;
-        if(localStorage.getItem('tasks') === null) {
-            tasks = [];
-        } else {
-            tasks = JSON.parse(localStorage.getItem('tasks'));
-        }
-
-        return tasks;
-    }
-
-    static addTask(task) {
-        const tasks = Store.getTasks();
-        tasks.push(task);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-    // TODO
-    static removeTask(number) {
-        const tasks = Store.getTasks();
-
-         tasks.forEach((task, index) => {
-             if(task.number === number) {
-                 tasks.splice(index, 1);
-             }
-         });
-
-         localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-}
-
-// UI
-class UI {
-    static displayTasks () {
-        const tasks = Store.getTasks();
-
-        tasks.forEach((task) => UI.addTaskToList(task));
-    }
-
-    static addTaskToList(task) {
-        const list = document.getElementById('task-list');
-        const row = document.createElement('tr');
-        row.innerHTML = `
-        <td>${task.title}</td>
-        <td>${task.description}</td>
-        <td>${task.city}</td>
-        <td>${task.date}</td>
-        <td><style = "display : none;">${task.number}</style></td>
-        <td><a href='#' class="btn delete">X</a></td>
-        `;
-        const column = document.createElement('tr');
-        column.innerHTML = `
-        <td>
-        <details>
-        <summary> Description </summary>
-        <p>${task.description}</p>
-        <div id = "placesContainer">
-        <label>Wybierz miasto z listy by zobaczyć ciekawe miejsca w okolicy:</label> 
-          <select>
-            <option id= "bialystok" value="Białystok" selected>Białystok</option>
-            <option value="Bydgoszcz">Bydgoszcz</option>
-            <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
-            <option value="Katowice">Katowice</option>
-            <option value="Kielce">Kielce</option>
-            <option value="Kraków">Kraków</option>
-            <option value="Lublin">Lublin</option>
-            <option value="Łódź">Łódź</option>
-            <option value="Olsztyn">Olsztyn</option>
-            <option value="Opole">Opole</option>
-            <option value="Poznań">Poznań</option>
-            <option value="Rzeszów">Rzeszów</option>
-            <option value="Szczecin">Szczecin</option>
-            <option value="Toruń">Toruń</option>
-            <option value="Warszawa">Warszawa</option>
-            <option value="Wrocław">Wrocław</option>
-            <option value="Zielona Góra">Zielona Góra</option>
-         </select>
-<div id= "restaurantContainer">
-<h1 id= "nameRestaurant"> </h1>
-</div>
-<div id= "museumContainer"></div>
-<div id= "parkContainer"> 
-<div id="name"></div>
-
-
-<div></div>
-</div>
-
-
-     </div>
-
-        </details>
-        </td>
-         `;
-
-        list.appendChild(row);
-        list.appendChild(column);
-    }
-
-    static deleteTask(el) {
-        if(el.classList.contains('delete')) {
-            el.closest('tr').nextElementSibling.remove();
-            el.closest('tr').remove();
-
-        }
-    }
-    // failed to add task
-    static ShowAlert(message) {
-        const div = document.createElement('div');
-        div.className = 'alert';
-        div.appendChild(document.createTextNode(message));
-        const container = document.querySelector('.container');
-        const form = document.getElementById('task-form');
-        container.insertBefore(div, form);
-
-        //magic
-        setTimeout(() => document.querySelector('.alert').remove(), 5000);
-    }
-
-    // !failed to add task
-    static ShowAlertSuccess(message) {
-        const div = document.createElement('div');
-        div.className = 'success';
-        div.appendChild(document.createTextNode(message));
-        const container = document.querySelector('.container');
-        const form = document.getElementById('task-form');
-        container.insertBefore(div, form);
-
-        //magic
-        setTimeout(() => document.querySelector('.success').remove(), 5000);
-    }
-
-    static clearInputs() {
-        document.getElementById('title').value = '';
-        document.getElementById('description').value = '';
-        document.getElementById('city').value = '';
-        document.getElementById('date').value = '';
-    }
-}
 
 // Event dsiplay tasks
 UI.displayTasks();
@@ -184,16 +38,26 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
 });
 
 //remove a task
-document.getElementById('task-list').addEventListener('click', (e) => {
+Array.from(document.getElementsByClassName('delete')).forEach(e => {
+  e.addEventListener('click', (e) => {
     //task removed from UI
     UI.deleteTask(e.target);
-
-    //task removed from store TODO
+    //task removed from store 
     Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
 
     //Task removed
     UI.ShowAlertSuccess('Task Removed');
-});
+})});
+
+//////////////////// TODO - TU ZMIANA NA ROZWIJANIE ///////////////////
+Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
+  el.addEventListener("click", () => {
+    const taskNumber = el.id.split('-')[1];
+    let searchTerm = document.getElementById(`city-${taskNumber}`).innerText;
+   if (searchTerm) { 
+      WeatherApi.getSearchMethod(searchTerm, taskNumber) 
+     };
+})});
 
 
 
@@ -241,14 +105,4 @@ document.querySelectorAll('.table-sortable th').forEach(headerCell => {
         sortTableByColumn(tableElement, headerIndex, !currentIsAsc);
     });
 });
-
-//Adding citys to arry in local storage
-
-const citysArr = []
-function addToCitysArr() {
-    city = document.getElementById('city').value;
-    citysArr.push(city);
-    console.log(citysArr);
-    sessionStorage.setItem("citysArr", JSON.stringify(citysArr));
-}
 

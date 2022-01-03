@@ -8,10 +8,10 @@
 
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <script  src="src/index.js"  type= "module" defer></script>
-    <script src="src/components/Theme.js" defer></script>
-    <script src="./src/components/Allinonefortasks.js" defer></script>
-    <script type="module" src="/src/api/placesAPI.js" defer></script>
+    <script  src="/src/index.js"  type= "module" defer></script>
+    <script src="/src/components/Theme.js" type="module" defer></script>
+    <script src="/src/components/Allinonefortasks.js" type="module" defer></script>
+    <script src="/src/api/placesAPI.js" type="module" defer></script>
 
     <title>My List</title>
 </head>
@@ -48,14 +48,13 @@
                     <label for="title">Date</label>
                     <input type="date" id="date" class="form-control">
                 </div>
-                <input type="submit" value="Add Task"
-                class="add-task-button">
+                <input type="submit" value="Add Task" id="guzik"
+                class="btn add-task-button">
             </form>
             <table class="table table-sortable">
                 <thead class="table-inputs">
                     <tr>
                         <th>Title</th>
-                        <th>Description</th>
                         <th>City</th>
                         <th>Date</th>
                         <th></th>
@@ -64,7 +63,5 @@
                 <tbody id="task-list"></tbody>
             </table>
     </div>
-
-
 </body>
 </html>
