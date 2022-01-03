@@ -1,5 +1,5 @@
 
-body = document.querySelector("body");
+const body = document.querySelector("body");
 function setTheme(themeBright) {
   localStorage.setItem('theme', themeBright);
   document.documentElement.className = themeBright;
