@@ -35,3 +35,13 @@ function terms_changed(termsCheckBox) {
       document.getElementById("register").style.opacity = 0.5;
   }
 }
+
+//Adding citys to arry in local storage
+
+const citysArr = []
+function addToCitysArr() {
+    city = document.getElementById('city').value;
+    citysArr.push(city);
+    console.log(citysArr);
+    sessionStorage.setItem("citysArr", JSON.stringify(citysArr));
+}
