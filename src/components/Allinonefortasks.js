@@ -17,13 +17,22 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
     const description = document.getElementById('description').value
     const city = document.getElementById('city').value
     const date = document.getElementById('date').value
+    const place = document.getElementById('changeCity').value
 
-    if(title === '' || description === '' || city === '' || date === '') {
+
+    if(title === '' || description === '' || city === '' || date === ''|| place === '') {
         UI.ShowAlert('Please fill in all fields');
     } else {
+        let searchTerm = document.getElementById('changeCity').innerText;
+        console.log(searchTerm);
+     if (searchTerm) { 
+         PlacesApi.getCurrentRestaurant(searchTerm);
+         PlacesApi.getCurrentMuseum(searchTerm);
+         PlacesApi.getCurrentPark(searchTerm);
+    };
     // instatiate task
-    const task = new Task(title, description, city, date);
-
+    const task = new Task(title, description, city, date, place);
+    
     //add task to UI
     UI.addTaskToList(task);
     
@@ -35,9 +44,8 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
 
     //clear inputs
     UI.clearInputs(); 
-    }
-});
-
+    
+}});
 //remove a task
 Array.from(document.getElementsByClassName('delete')).forEach(e => {
   e.addEventListener('click', (e) => {
@@ -60,16 +68,11 @@ Array.from(document.getElementsByClassName("description-drop-down")).forEach(el 
      };
 })});
 
-Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
-    el.addEventListener("click", () => {
-      const taskNumber = el.id.split('-')[1];
-      let searchTerm = document.getElementById('placesContainer').innerText;
-     if (searchTerm) { 
-         PlacesApi.getCurrentRestaurant(searchTerm, taskNumber)
-         PlacesApi.getCurrentMuseum(searchTerm, taskNumber)
-         PlacesApi.getCurrentPark(searchTerm, taskNumber)   
-    };
-  })});
+// Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
+//     el.addEventListener("click", () => {
+//       const taskNumber = el.id.split('-')[1];
+      
+//   })});
 
 
 

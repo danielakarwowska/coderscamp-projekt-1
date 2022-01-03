@@ -1,4 +1,4 @@
-  export class PlacesBox {
+  export default class PlacesBox {
      constructor (data, container, taskNumber){
          this.data = data,
          this.container = container,
@@ -13,7 +13,4 @@
         } 
     }
   }
-        
-
-
- 
+    

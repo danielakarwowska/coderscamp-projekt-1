@@ -31,7 +31,7 @@
         <h1 class="testingList">
             Tududu list
         </h1>
-            <form id="task-form" onsubmit="return addToCitysArr()">
+            <form id="task-form">
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" id="title" class="form-control">
@@ -50,8 +50,8 @@
                 </div>
                 <div id = "placesContainer">
                     <label>Wybierz miasto z listy by zobaczyć ciekawe miejsca w okolicy:</label> 
-                      <select>
-                        <option id= "bialystok" value="Białystok" selected>Białystok</option>
+                      <select id="changeCity">
+                        <option value="Białystok" selected>Białystok</option>
                         <option value="Bydgoszcz">Bydgoszcz</option>
                         <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
                         <option value="Katowice">Katowice</option>
@@ -85,5 +85,6 @@
                 <tbody id="task-list"></tbody>
             </table>
     </div>
+    
 </body>
 </html>
