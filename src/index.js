@@ -2,8 +2,6 @@ import { User } from "./components/user.js"
 
 console.log('test1')
 
-
-
 if(document.querySelector('#register') ){
   console.log('register')
   document.querySelector('#register').addEventListener('click', event =>{

@@ -8,8 +8,6 @@ import UI from '../components/UI.js';
 UI.displayTasks();
 
 
-
-
 //add a task
 document.getElementById('task-form').addEventListener('submit', (e) => {
     e.preventDefault();

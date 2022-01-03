@@ -42,11 +42,10 @@ button:active {
 }
 
 .wrapper {
-  margin-top: 25vh;
-  margin-left: 15vh;
+  margin-top: 20vh;
+  margin-left: 10vh;
   color: var(--text-color);
   font-family: 'Roboto', sans-serif;
-
   height: 5%;
   max-width: 100px;
   display: flex;
@@ -135,10 +134,9 @@ section > p:last-of-type {
   transform: translateY(-30%);
 }
 
-@media screen and (max-height: 560px) {
+/* @media screen and (max-height: 560px) {
   .sun, .sun::after {
     margin-bottom: calc(-6rem - 12vh);
     z-index: -1;
   }
-}
-
+} */ /*Nie wiem, jaki był cel tego media.*/
