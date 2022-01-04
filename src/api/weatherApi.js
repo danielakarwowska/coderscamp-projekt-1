@@ -12,14 +12,14 @@ export default class WeatherApi {
   }
 
   static getCurrentWeather(searchMethod, searchTerm, taskNumber) {
-    const units = 'metric'; 
+    const units = 'metric';
     const appId = '2a5cc3af57a0f47a0d85d5a5a7e2f7de';
     fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
       .then((response) => {
         return response.json();
       })
       .then((response) => {
-        let Box = new WeatherBox(this.gatherWeatherData(response), document.getElementById('weatherContainer'), taskNumber);
+        new WeatherBox(this.gatherWeatherData(response), taskNumber);
       })
       .catch((err) => {
         console.log(err);
