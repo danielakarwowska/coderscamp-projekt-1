@@ -15,7 +15,6 @@ export default class UI {
         <td id='city-${task.number}'>${task.city}</td>
         <td>${task.date}</td>
         <td><style = "display : none;">${task.number}</style></td>
-        <td><a href='#' class="btn delete">X</a></td>
         <td>
         <div class="description-drop-down" id='dd-${task.number}'>
           <details>
@@ -29,6 +28,7 @@ export default class UI {
           </details>
         </div>
         </td>
+        <td><a href='#' class="btn delete">X</a></td>
         `;
         // const column = document.createElement('tr');
         // column.innerHTML = `
