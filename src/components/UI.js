@@ -8,6 +8,7 @@ export default class UI {
     }
 
     static addTaskToList(task) {
+        console.log(task);
         const list = document.getElementById('task-list');
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -27,7 +28,7 @@ export default class UI {
               <div id='temperature${task.number}'></div>
           </div>
           <div id='restaurantContainer${task.number}'>
-            <div id='nameRestaurant${task.number}'></div>
+            <div id='nameRestaurant${task.number}'>${task.placeData.restaurant.name}</div>
             <div id='addressRestaurant${task.number}'></div>
           </div>
           <div id='museumContainer${task.number}'>
@@ -81,18 +82,18 @@ export default class UI {
         setTimeout(() => document.querySelector('.alert').remove(), 5000);
     }
 
-    // !failed to add task
-    static ShowAlertSuccess(message) {
-        const div = document.createElement('div');
-        div.className = 'success';
-        div.appendChild(document.createTextNode(message));
-        const container = document.querySelector('.container');
-        const form = document.getElementById('task-form');
-        container.insertBefore(div, form);
+    // !failed to add task - TODO
+    // static ShowAlertSuccess(message) {
+    //     const div = document.createElement('div');
+    //     div.className = 'success';
+    //     div.appendChild(document.createTextNode(message));
+    //     const container = document.querySelector('.container');
+    //     const form = document.getElementById('task-form');
+    //     container.insertBefore(div, form);
 
-        //magic
-        setTimeout(() => document.querySelector('.success').remove(), 5000);
-    }
+    //     //magic
+    //     setTimeout(() => document.querySelector('.success').remove(), 5000);
+    // }
 
     static clearInputs() {
         document.getElementById('title').value = '';

@@ -2,15 +2,14 @@ import WeatherApi from '../api/WeatherApi.js';
 import Task from '../components/Task.js';
 import Store from '../components/Store.js';
 import UI from '../components/UI.js';
-import { PlacesApi } from '../api/PlacesApi.js';
-
+import PlacesAPI from '../api/placesAPI.js';
 
 // Event dsiplay tasks
 UI.displayTasks();
 
 
 //add a task
-document.getElementById('task-form').addEventListener('submit', (e) => {
+document.getElementById('task-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     // get from values
     const title = document.getElementById('title').value;
@@ -18,29 +17,34 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
     const city = document.getElementById('city').value
     const date = document.getElementById('date').value
     const place = document.getElementById('changeCity').value
-
-
+    console.log('place');
     if(title === '' || description === '' || city === '' || date === ''|| place === '') {
         UI.ShowAlert('Please fill in all fields');
+        // console.log(place);
     } else {
-        let searchTerm = document.getElementById('changeCity').innerText;
-        console.log(searchTerm);
-     if (searchTerm) { 
-         PlacesApi.getCurrentRestaurant(searchTerm);
-         PlacesApi.getCurrentMuseum(searchTerm);
-         PlacesApi.getCurrentPark(searchTerm);
-    };
-    // instatiate task
-    const task = new Task(title, description, city, date, place);
-    
-    //add task to UI
-    UI.addTaskToList(task);
-    
-    //task added to store
-    Store.addTask(task);
-
-    //successfully added task
-    UI.ShowAlertSuccess('Task Added');
+        const task = new Task(title, description, city, date, place);
+        const placesAPI = new PlacesAPI(place);
+        console.log(placesAPI.lat);
+        // let restaurantData = await placesAPI.getCurrentRestaurant();
+        // placesAPI.getCurrentRestaurant().then(res=>{let restaurantData=res;
+        placesAPI.getCurrentRestaurant(task);
+        // console.log(typeof restaurantData)
+        // })
+        
+        placesAPI.getCurrentMuseum(task);
+        placesAPI.getCurrentPark(task);
+        // const placeData = {restaurant: restaurantData, museum: museumData, park: parkData}
+        
+        // console.log(task);
+        // instatiate task
+        //add task to UI
+        UI.addTaskToList(task);
+        
+        //task added to store
+        Store.addTask(task);
+        
+    //successfully added task TODO
+    // UI.ShowAlertSuccess('Task Added');
 
     //clear inputs
     UI.clearInputs(); 

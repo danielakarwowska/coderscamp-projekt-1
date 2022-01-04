@@ -1,11 +1,13 @@
-import PlacesBox from '../components/Places.js';
+import PlacesBox from '../components/PlacesBox.js';
 import API_KEY from "../apikey.js";
 export default class PlacesAPI {
     constructor(city){
     this.lat;
-    this.log;
+    this.lng;
     this.attachLatLng(city);
-    attachLatLng(city) ;
+    }
+    
+    attachLatLng(city) {
     switch (city) {
         case 'Białystok':
           this.lat = 53.13;
@@ -53,7 +55,7 @@ export default class PlacesAPI {
           break;
           case 'Opole' :
           this.lat = 50.67;
-          lhis.lng = 1.792;
+          this.lng = 17.92;
           break;
           case 'Poznań' :
           this.lat = 52.41;
@@ -84,53 +86,56 @@ export default class PlacesAPI {
           this.lng = 15.51;
           break;
         default: 
-        console.log();
-      }}
-
-}
-    
-
-
-export class PlacesApi {
-    constructor(lat,lng){
-        this.lat =lat || 52.2297;
-        this.lng =lng || 21.0122;
+        this.lat = 51.94;
+        this.lng = 15.51;
+      }
     }
 
-getCurrentRestaurant (searchTerm, taskNumber){
-fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
+getCurrentRestaurant(task){
+    console.log(this.lng);
+fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
 .then(response =>
-response.json()
-.then(response => {
-    console.log(response);
-    let box = new PlacesBox(this.gatherRestaurantData(response), document.getElementById('restaurantContainer'), taskNumber);
+{return response.json();}
+).then(response => {
+    // console.log(response.status);
+    
+    const data = this.gatherRestaurantData(response);
+    task.attachRestaurant(data);
+    // return data;
+    // this.gatherRestaurantData(response);
+    // let box = new PlacesBox(data);
     //box.addElement();
 })
 .catch(error =>{
     console.log(`tutaj: ${error}`);
-}))
+});
 }
 
-getCurrentMuseum (searchTerm, taskNumber){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
+getCurrentMuseum (task){
+    fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
     .then(response => {
-    console.log(response);
-    let box = new PlacesBox(this.gatherMuseumData(response), document.getElementById('museumContainer'), taskNumber);
+        const data = this.gatherMuseumData(response);
+        task.attachMuseum(data);
+
+    // console.log(response);
+    // let box = new PlacesBox(this.gatherMuseumData(response), document.getElementById('museumContainer'), taskNumber);
     //box.addElement();
     })
     .catch(error =>{
         console.log(`tutaj: ${error}`);
     }))
     }
-getCurrentPark (searchTerm, taskNumber){
-    fetch (`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
+getCurrentPark (task){
+    fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`)
     .then(response =>
     response.json()
      .then(response => {
-    console.log(response);
-    let box = new PlacesBox(this.gatherParkData(response) , document.getElementById('parkContainer' ), taskNumber);
+        const data = this.gatherParkData(response);
+        task.attachPark(data);
+    // console.log(response);
+    // let box = new PlacesBox(this.gatherParkData(response) , document.getElementById('parkContainer' ), taskNumber);
     //box.addElement();
         })
         .catch(error =>{
@@ -138,7 +143,7 @@ getCurrentPark (searchTerm, taskNumber){
         }))
         }
 gatherRestaurantData(data) {
-    const { name, formatted_address } = data;
+    const { name, formatted_address } = data.candidates[0];
     const result = {
     nameRestaurant: name,
     addressRestaurant: formatted_address,
@@ -146,7 +151,7 @@ gatherRestaurantData(data) {
     return result;
     }
 gatherMuseumData(data) {
-    const { name, formatted_address } = data;
+    const { name, formatted_address } = data.candidates[0];
     const result = {
     nameMuseum: name,
     addressMuseum: formatted_address,
@@ -154,7 +159,7 @@ gatherMuseumData(data) {
     return result;
     }
 gatherParkData(data) {
-    const { name, formatted_address } = data;
+    const { name, formatted_address } = data.candidates[0];
     const result = {
     namePark: name,
     addressPark: formatted_address,
@@ -163,8 +168,3 @@ gatherParkData(data) {
     }
 
 }
-
-// const places = new PlacesApi();
-// places.getCurrentRestaurant();
-// places.getCurrentMuseum();
-// places.getCurrentPark();
