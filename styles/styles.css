@@ -645,15 +645,20 @@ color: var(--green-color);
 
  #title {
     margin-left: 5em;
+    color: black;
  }
  #description {
-    margin-left: 0.7em;
+    margin-left: 0.75em;
+    color: black;
 }
 #city {
     margin-left: 5.2em;
+    color: black;
+    margin-bottom: 0.2em
 }
 #date {
     margin-left: 5em;
+    color: black;
 }
 
 th {
