@@ -7,7 +7,7 @@ import PlacesBox from './PlacesBox.js';
 
 // Event dsiplay tasks
 UI.displayTasks();
-
+a();
 //add a task
 document.getElementById('task-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -29,7 +29,7 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
     // console.log(task);
 
     // instatiate task & add task to UI
-    UI.addTaskToList(task);
+    await UI.addTaskToList(task);
     // console.log(task);
 
     //task added to store
@@ -40,6 +40,7 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
 
     //clear inputs
     UI.clearInputs();
+    a();
   }
 });
 //remove a task
@@ -56,24 +57,26 @@ Array.from(document.getElementsByClassName('delete')).forEach((e) => {
 });
 
 // displaying description places
-Array.from(document.getElementsByClassName('description-drop-down')).forEach((el) => {
-  el.addEventListener('click', () => {
-    const currentTasks = Store.getTasks();
-    const taskNumber = el.id.split('-')[1];
-    const task = currentTasks.find((task) => task.number === taskNumber);
-    console.log('aaa');
-    // console.log(task);
-    let searchTerm = document.getElementById(`city-${taskNumber}`).innerText;
-    if (searchTerm) {
-      WeatherApi.getSearchMethod(searchTerm, taskNumber);
-    }
-    const placesBox = new PlacesBox();
-    placesBox.setPlacesData(task.placesData.restaurant, task.number);
-    placesBox.setPlacesData(task.placesData.museum, task.number);
-    placesBox.setPlacesData(task.placesData.park, task.number);
-  });
-});
+function a() {
+  Array.from(document.getElementsByClassName('description-drop-down')).forEach((el) => {
+    el.addEventListener('click', () => {
+      const currentTasks = Store.getTasks();
+      const taskNumber = el.id.split('-')[1];
+      const task = currentTasks.find((task) => task.number === taskNumber);
 
+      console.log('aaa');
+
+      let searchTerm = document.getElementById(`city-${taskNumber}`).innerText;
+      if (searchTerm) {
+        WeatherApi.getSearchMethod(searchTerm, taskNumber);
+      }
+      const placesBox = new PlacesBox();
+      placesBox.setPlacesData(task.placesData.restaurant, task.number);
+      placesBox.setPlacesData(task.placesData.museum, task.number);
+      placesBox.setPlacesData(task.placesData.park, task.number);
+    });
+  });
+}
 // Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
 //     el.addEventListener("click", () => {
 //       const taskNumber = el.id.split('-')[1];
