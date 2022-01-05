@@ -44,7 +44,7 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
   }
 });
 //remove a task
-function deleteListener (
+function deleteListener () {
   Array.from(document.getElementsByClassName('delete')).forEach((e) => {
     e.addEventListener('click', (e) => {
       //task removed from UI
@@ -56,7 +56,7 @@ function deleteListener (
       UI.ShowAlertSuccess('Task Removed');
     });
   });
-);
+};
 
 // displaying description places
 function dropdownListener() {
