@@ -1,4 +1,4 @@
-import { User } from './components/user.js';
+import { User } from './components/User.js';
 
 if (document.querySelector('#register')) {
   document.querySelector('#register').addEventListener('click', (event) => {
