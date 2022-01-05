@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Viga&display=swap');
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,13 +10,13 @@
 
 .theme-bright {
   --background-color: #e5e5e5;
-  --green-color: #3A6254;
-  --text-color: #3C3744;
+  --green-color: #3a6254;
+  --text-color: #3c3744;
 }
 
 .theme-dark {
-  --background-color: #3C3744;
-  --green-color: #C41E3D;
+  --background-color: #3c3744;
+  --green-color: #c41e3d;
   --text-color: #e5e5e5;
 }
 
@@ -25,20 +27,21 @@ body {
 }
 
 button {
-    display: block;
-    border: none;
-    color: inherit;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
+  display: block;
+  border: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
 
-button:focus, button:active {
-    outline: none;
-    }
+button:focus,
+button:active {
+  outline: none;
+}
 
 button:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .wrapper {
@@ -68,7 +71,8 @@ h2 {
   font-family: 'Viga', sans-serif;
 }
 
-h2, * + p {
+h2,
+* + p {
   margin-bottom: 0.5rem;
 }
 
@@ -91,7 +95,7 @@ section > p:last-of-type {
 }
 
 .toggle::after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: var(--background-color);
   top: 0;
@@ -106,7 +110,8 @@ section > p:last-of-type {
   transform: translateX(100%);
 }
 
-.sun, .sun::after {
+.sun,
+.sun::after {
   background-color: var(--green-color);
   min-width: 100px;
   min-height: 100px;
@@ -118,9 +123,9 @@ section > p:last-of-type {
   transform: rotate(-25deg);
   transition: background-color ease-out 250ms;
 }
- 
-  .sun::after {
-  content: "";
+
+.sun::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -133,6 +138,10 @@ section > p:last-of-type {
 .sun.clicked::after {
   transform: translateY(-30%);
 }
+
+/* .place-container {
+  padding: 20pox;
+} */
 
 /* @media screen and (max-height: 560px) {
   .sun, .sun::after {

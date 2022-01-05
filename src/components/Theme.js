@@ -36,12 +36,11 @@ function terms_changed(termsCheckBox) {
   }
 }
 
-//Adding citys to arry in local storage
+//Adding cities to array in session storage
 
 const citysArr = []
 function addToCitysArr() {
     city = document.getElementById('city').value;
     citysArr.push(city);
-    console.log(citysArr);
     sessionStorage.setItem("citysArr", JSON.stringify(citysArr));
 }
