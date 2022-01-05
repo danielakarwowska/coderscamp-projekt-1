@@ -7,7 +7,8 @@ import PlacesBox from './PlacesBox.js';
 
 // Event dsiplay tasks
 UI.displayTasks();
-a();
+dropdownListener();
+deleteListener();
 //add a task
 document.getElementById('task-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -16,6 +17,7 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
   const description = document.getElementById('description').value;
   const city = document.getElementById('city').value;
   const date = document.getElementById('date').value;
+  // addToCitysArr();
   if (title === '' || description === '' || city === '' || date === '') {
     UI.ShowAlert('Please fill in all fields');
     return;
@@ -37,24 +39,27 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
 
     //clear inputs
     UI.clearInputs();
-    a();
+    dropdownListener();
+    deleteListener();
   }
 });
 //remove a task
-Array.from(document.getElementsByClassName('delete')).forEach((e) => {
-  e.addEventListener('click', (e) => {
-    //task removed from UI
-    UI.deleteTask(e.target);
-    //task removed from store
-    Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
+function deleteListener (
+  Array.from(document.getElementsByClassName('delete')).forEach((e) => {
+    e.addEventListener('click', (e) => {
+      //task removed from UI
+      UI.deleteTask(e.target);
+      //task removed from store
+      Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
 
-    //Task removed
-    UI.ShowAlertSuccess('Task Removed');
+      //Task removed
+      UI.ShowAlertSuccess('Task Removed');
+    });
   });
-});
+);
 
 // displaying description places
-function a() {
+function dropdownListener() {
   Array.from(document.getElementsByClassName('description-drop-down')).forEach((el) => {
     el.addEventListener('click', () => {
       const currentTasks = Store.getTasks();

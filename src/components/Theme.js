@@ -34,9 +34,7 @@ function terms_changed(termsCheckBox) {
       document.getElementById("register").disabled = true;
       document.getElementById("register").style.opacity = 0.5;
   }
-}
-
-//Adding cities to array in session storage
+}//Adding citys to arry in local storage
 
 const citysArr = []
 function addToCitysArr() {

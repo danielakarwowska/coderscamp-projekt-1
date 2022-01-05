@@ -617,19 +617,20 @@ color: var(--green-color);
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
   }
 
   .add-task-button {
     width: 16vh;
     height: 8vh;
-    margin-bottom: 5vh;
-    margin-top: 5vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
     background-color: var(--green-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 80px;
     font-weight: bold;
+    transform: scale(0.9);
   }
 
   label {
@@ -644,35 +645,64 @@ color: var(--green-color);
   }
 
  #title {
-    margin-left: 5em;
+    margin-left: 5.05em;
+    color: black;
  }
  #description {
-    margin-left: 0.7em;
+    margin-left: 0.8em;
+    color: black;
 }
 #city {
-    margin-left: 5.2em;
+    margin-left: 5.25em;
+    color: black;
+    margin-bottom: 0.2em
 }
 #date {
     margin-left: 5em;
+    color: black;
 }
 
 th {
     color: var(--green-color);
     font-weight: bold;
-    font-size: 1.2em;
-
+    font-size: 2em;
 }
-
-.table {
-    text-align: left;
-}
-
 
 tr:hover {background-color: grey;}
-
 
 #task-list {
     color: var(--text-color);
     font-weight: bold;
     font-size: 1.2em;
+}
+
+table {
+    width: 50%;
+    text-align: left;
+}
+
+thead {
+    margin-bottom: 5em;
+}
+
+tbody:before {
+    content:"@";
+    display:block;
+    line-height:10px;
+    text-indent:-99999px
+}
+
+.form-group {
+    margin-left: -4vh;
+}
+
+.btn.delete {
+    background-color: var(--green-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vh;
+    height: 3vh;
 }
