@@ -16,7 +16,7 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
     const description = document.getElementById('description').value
     const city = document.getElementById('city').value
     const date = document.getElementById('date').value
-
+    addToCitysArr();
     if(title === '' || description === '' || city === '' || date === '') {
         UI.ShowAlert('Please fill in all fields');
     } else {
