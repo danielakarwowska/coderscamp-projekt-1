@@ -21,16 +21,13 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
     return;
   } else {
     const task = new Task(title, description, city, date);
-    // console.log(task);
     const placesAPI = new PlacesAPI(city);
     await placesAPI.getCurrentRestaurant(task);
     await placesAPI.getCurrentMuseum(task);
     await placesAPI.getCurrentPark(task);
-    // console.log(task);
 
     // instatiate task & add task to UI
     await UI.addTaskToList(task);
-    // console.log(task);
 
     //task added to store
     Store.addTask(task);
@@ -63,9 +60,6 @@ function a() {
       const currentTasks = Store.getTasks();
       const taskNumber = el.id.split('-')[1];
       const task = currentTasks.find((task) => task.number === taskNumber);
-
-      console.log('aaa');
-
       let searchTerm = document.getElementById(`city-${taskNumber}`).innerText;
       if (searchTerm) {
         WeatherApi.getSearchMethod(searchTerm, taskNumber);
@@ -77,16 +71,6 @@ function a() {
     });
   });
 }
-// Array.from(document.getElementsByClassName("description-drop-down")).forEach(el => {
-//     el.addEventListener("click", () => {
-//       const taskNumber = el.id.split('-')[1];
-
-//   })});
-
-/* NOTATKI DLA NIESZCZĘŚNIKA, KTÓRY BĘDZIE MUSIAŁ TO WYSTYLIZOWAĆ
-klasa showAlert tworzy nowego diva z klasą 'alert', który trzeba wysylizować
-tak samo klasa showAlertSuccess => div z klasą 'success'.
-*/
 
 // SORTING
 

@@ -3,12 +3,10 @@ import Store from '../components/Store.js';
 export default class UI {
   static displayTasks() {
     const tasks = Store.getTasks();
-
     tasks.forEach((task) => UI.addTaskToList(task));
   }
 
   static addTaskToList(task) {
-    // console.log(task);
     const list = document.getElementById('task-list');
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -43,32 +41,16 @@ export default class UI {
         </div>
         </td>
         `;
-    // const column = document.createElement('tr');
-    // column.innerHTML = `
-    // <td id='description${task.number} class="description-drop-down"'>
-    // <details>
-    // <summary> Description </summary>
-    // <p>${task.description}</p>
-    // <div id='weatherContainer${task.number}'>
-    //     <div id='cityHeader${task.number}'></div>
-    //     <div id='weatherDescriptionHeader${task.number}'></div>
-    //     <div id='temperature${task.number}'></div>
-    // </div>
-    // </details>
-    // </td>
-    //  `;
-
+    
     list.appendChild(row);
-    //list.appendChild(column);
   }
 
   static deleteTask(el) {
     if (el.classList.contains('delete')) {
-      //el.closest('tr').nextElementSibling.remove();
       el.closest('tr').remove();
     }
   }
-  // // failed to add task
+
   static ShowAlert(message) {
     const div = document.createElement('div');
     div.className = 'alert';
@@ -81,7 +63,6 @@ export default class UI {
     setTimeout(() => document.querySelector('.alert').remove(), 5000);
   }
 
-  // !failed to add task - TODO
   static ShowAlertSuccess(message) {
     const div = document.createElement('div');
     div.className = 'success';

@@ -1,7 +1,6 @@
 import { User } from './components/user.js';
 
 if (document.querySelector('#register')) {
-  console.log('register');
   document.querySelector('#register').addEventListener('click', (event) => {
     event.preventDefault();
     const passwordRegEx = `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`;
@@ -31,7 +30,6 @@ if (document.querySelector('#register')) {
 }
 
 if (document.querySelector('#login')) {
-  console.log('login');
   document.querySelector('#login').addEventListener('click', (event) => {
     event.preventDefault();
     let { mail, password } = Object.fromEntries(new FormData(document.getElementById('form-login')));

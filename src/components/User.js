@@ -7,7 +7,6 @@ export class User{
     //let user = new User(username, password)
 
     registerUser(){
-        console.log('register');
         localStorage.getItem(this.mail) ? alert('already exist') : localStorage.setItem(this.mail,JSON.stringify(this))
         window.location.replace('newTask.html');
     }

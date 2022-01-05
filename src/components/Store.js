@@ -13,8 +13,6 @@ export default class Store {
   static addTask(task) {
     const tasks = Store.getTasks();
     tasks.push(task);
-    console.log(tasks);
-    console.log(JSON.stringify(tasks));
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
   // TODO

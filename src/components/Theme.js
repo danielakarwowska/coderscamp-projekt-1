@@ -42,6 +42,5 @@ const citysArr = []
 function addToCitysArr() {
     city = document.getElementById('city').value;
     citysArr.push(city);
-    console.log(citysArr);
     sessionStorage.setItem("citysArr", JSON.stringify(citysArr));
 }
