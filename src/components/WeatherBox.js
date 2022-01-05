@@ -1,10 +1,8 @@
 export default class WeatherBox {
-  constructor(data, container, taskNumber) {
+  constructor(data, taskNumber) {
     this.data = data;
-    this.container = container;
     this.setWeatherData(taskNumber);
   }
-
 
   setWeatherData(taskNumber) {
     for (const [key, value] of Object.entries(this.data)) {
