@@ -1,5 +1,5 @@
 import PlacesBox from '../components/PlacesBox.js';
-import API_KEY from '../apikey.js';
+// import API_KEY from '../apikey.js';
 export default class PlacesAPI {
   constructor(city) {
     this.lat;
@@ -85,7 +85,7 @@ export default class PlacesAPI {
 
   async getCurrentRestaurant(task) {
     await fetch(
-      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`,
+      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=restaurant&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${process.env.API_KEY}`,
     )
       .then((response) => {
         return response.json();
@@ -101,7 +101,7 @@ export default class PlacesAPI {
 
   async getCurrentMuseum(task) {
     await fetch(
-      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`,
+      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=museum&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${process.env.API_KEY}`,
     ).then((response) =>
       response
         .json()
@@ -117,7 +117,7 @@ export default class PlacesAPI {
   }
   async getCurrentPark(task) {
     await fetch(
-      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${API_KEY}`,
+      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=park&inputtype=textquery&locationbias=circle%3A10000%40${this.lat}%2C${this.lng}&key=${process.env.API_KEY}`,
     ).then((response) =>
       response
         .json()
