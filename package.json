@@ -11,7 +11,6 @@
     "start": "parcel",
     "build": "parcel build",
     "prepare": "husky install",
-    "heroku-postbuild": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
