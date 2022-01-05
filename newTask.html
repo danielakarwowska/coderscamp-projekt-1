@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script  src="/src/index.js"  type= "module" defer></script>
+    <script src="/src/components/Theme.js" defer></script>
+    <script src="/src/components/Allinonefortasks.js" type="module" defer></script>
+    <script src="/src/api/placesAPI.js" type="module" defer></script>
+
+    <title>My List</title>
+</head>
+<body>
+
+    <div class="wrapper" id="wrapper">
+        <div class="sun"></div>
+        <section>
+        <h2>Too bright?</h2>
+        <p>&#128071 &#128071 &#128071</p>
+        </section>
+        <button class="toggle" id="switch" onClick="toggleTheme()"></button>
+    </div>
+
+
+    <div class="taskContainer">
+        <h1 class="testingList">
+            Tududu list
+        </h1>
+            <form id="task-form" method="POST">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="" id="description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">Date</label>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="form-group" id="placesContainer">
+                    <label for="city">Wybierz miasto z listy by zobaczyć ciekawe miejsca w okolicy:</label> 
+                      <select id="city">
+                        <option value="Białystok" selected>Białystok</option>
+                        <option value="Bydgoszcz">Bydgoszcz</option>
+                        <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+                        <option value="Katowice">Katowice</option>
+                        <option value="Kielce">Kielce</option>
+                        <option value="Kraków">Kraków</option>
+                        <option value="Lublin">Lublin</option>
+                        <option value="Łódź">Łódź</option>
+                        <option value="Olsztyn">Olsztyn</option>
+                        <option value="Opole">Opole</option>
+                        <option value="Poznań">Poznań</option>
+                        <option value="Rzeszów">Rzeszów</option>
+                        <option value="Szczecin">Szczecin</option>
+                        <option value="Toruń">Toruń</option>
+                        <option value="Warszawa">Warszawa</option>
+                        <option value="Wrocław">Wrocław</option>
+                        <option value="Zielona Góra">Zielona Góra</option>
+                     </select>
+                </div>
+                <input type="submit" value="Add Task" id="guzik"
+                class="btn add-task-button">
+            </form>
+            <table class="table table-sortable">
+                <thead class="table-inputs">
+                    <tr>
+                        <th>Title</th>
+                        <th>City</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="task-list"></tbody>
+            </table>
+    </div>
+    
+</body>
+</html>

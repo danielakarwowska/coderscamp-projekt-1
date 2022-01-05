@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-
-    <title>To Do App</title>
-    <link rel="stylesheet" href="styles/main.scss" />
+    <title>TuDuDu</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script  src="src/index.js"  type= "module" defer></script>
+    <script src="src/components/Theme.js" defer></script>
   </head>
   <body>
-    <div id="todo-app">
-      <div id="logo"></div>
-      <div id="navigation"></div>
-      <div id="title"></div>
-      <div id="container"></div>
+
+    <div class="wrapper" id="wrapper">
+      <div class="sun"></div>
+      <section>
+      <h2>Too bright?</h2>
+      <p>&#128071 &#128071 &#128071</p>
+      </section>
+      <button class="toggle" id="switch" onClick="toggleTheme()"></button>
     </div>
 
-    <!-- to be deleted -->
+  
+    <div id="logo">
+      <div class="center">
+        <h1><span>daily</span>TuDuDu<span class="task">task</span></h1>
+          <div class="ball"></div>
+          <div class="linea izq"></div>
+          <div class="linea der"></div>
+          <div class="par izq"></div>
+          <div class="par der"></div>
 
-    <div id="searchContainer">
-      <input type="text" placeholder="City Name or Zipcode" id="searchInput" class="searchControl" />
-      <button class="searchControl" id="searchBtn">Search</button>
-    </div>
-    <div id="weatherContainer">
-      <div id="weatherDescription">
-        <h1 id="cityHeader"></h1>
-        <div id="weatherMain">
-          <div id="temperature"></div>
-          <div id="weatherDescriptionHeader"></div>
-          <div><img id="weatherIcon" /></div>
-        </div>
+            <div class="quote">
+            <p>"Do not wait until the conditions are perfect to <br>begin. Beginning makes the conditions perfect."</p>
+            </div>
+          </div>
       </div>
-    </div>
 
-    <!-- end of deletion -->
-    <script src="src/index.js" type="module" defer></script>
+      <div class="container">
+
+        <a href="login.html">
+          <button class="greenButtons" type="button">SIGN IN</button>
+        </a>
+
+        <a href="register.html">
+          <button class="greenButtons" type="button">SIGN UP</button>
+        </a>
+
+        <a href="newTask.html">
+          <button class="greenButtons" type="button">GUEST</button>
+        </a>
+        
+      </div>
+    
+   
   </body>
 </html>
