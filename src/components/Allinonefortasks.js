@@ -1,4 +1,4 @@
-import WeatherApi from '../api/WeatherApi.js';
+import WeatherApi from '../api/weatherApi.js';
 import Task from '../components/Task.js';
 import Store from '../components/Store.js';
 import UI from '../components/UI.js';
