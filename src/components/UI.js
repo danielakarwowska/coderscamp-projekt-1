@@ -10,10 +10,11 @@ export default class UI {
     const list = document.getElementById('task-list');
     const row = document.createElement('tr');
     row.innerHTML = `
-        <td>${task.title}</td>
-        <td id="city-${task.number}">${task.city}</td>
-        <td>${task.date}</td>
-        <td><style = "display : none;">${task.number}</style></td>
+    <td>${task.title}</td>
+    <td id="city-${task.number}">${task.city}</td>
+    <td>${task.date}</td>
+    <td><style = "display : none;">${task.number}</style></td>
+    <td><a href='#' class="btn delete">X</a></td>
         <td>
         <div class="description-drop-down" id='dd-${task.number}'>
           <details>
@@ -35,11 +36,10 @@ export default class UI {
           <div id='parkContainer${task.number}'>
             <div id='namePark${task.number}'></div>
             <div id='addressPark${task.number}'></div>
-          </div>
-          </details>
-        </div>
-        </td>
-        <td><a href='#' class="btn delete">X</a></td>
+            </div>
+            </details>
+            </div>
+            </td>
         `;
     
     list.appendChild(row);
@@ -47,6 +47,7 @@ export default class UI {
 
   static deleteTask(el) {
     if (el.classList.contains('delete')) {
+      console.log(el.closest('tr'));
       el.closest('tr').remove();
     }
   }
