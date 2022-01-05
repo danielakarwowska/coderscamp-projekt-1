@@ -8,7 +8,7 @@
   "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel",
+    "start": "node app",
     "build": "parcel build",
     "prepare": "husky install"
   },
